@@ -1,0 +1,68 @@
+
+
+
+
+.xSym {
+
+  span {
+    &:first-child {
+      transform: rotate(-45deg) translate(-10px, 5px);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:last-child {
+      transform: rotate(45deg) translate(-2px, 3px);
+    }
+  }
+}
+
+
+.access{
+  cursor: not-allowed;
+
+}
+/*
+#home:hover {
+  color: #fff;
+  background-color: #99c6e7;
+}
+
+#myPosts:hover {
+  color: #fff;
+  background-color: #99c6e7;
+}
+
+#favs:hover {
+  color: #fff;
+  background-color: #99c6e7;
+}
+
+#incomingApps:hover {
+  color: #fff;
+  background-color: #99c6e7;
+}
+
+#navBar {
+  background-color: #a2d6f9;
+}
+
+#newPostButton {
+  color: #fff;
+  background-color: #94bfa7;
+}
+
+#newPostButton:hover {
+  color: #fff;
+  background-color: #5e8b6a;
+}
+
+#logOutButton {
+  color: #fff;
+  background-color: #2b3a67;
+}
+
+#logOutButton:hover {
+  color: #fff;
+  background-color: #162245;
+} */
