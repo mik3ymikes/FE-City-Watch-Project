@@ -11,6 +11,7 @@
 
 
 
+
 .xSym {
 
   span {
@@ -33,8 +34,10 @@
 
 .webTitle{
 font-weight: 700;
-font-family: Georgia, 'Times New Roman', Times, serif;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+
+
 
 
 /* .navbar{
@@ -97,3 +100,4 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   color: #fff;
   background-color: #162245;
 } */
+
