@@ -1,4 +1,30 @@
 
+/* .xSym .navbar-toggler-icon {
+  display: none;
+} */
+
+/* .xSym span {
+  &:first-child {
+    transform: rotate(-45deg) translate(-10px, 5px);
+  }
+  &:nth-child(2) {
+    transform: rotate(-45deg) translate(-10px, 5px)
+  }
+  &:last-child {
+    transform: rotate(45deg) translate(-2px, 3px);
+  }
+} */
+
+
+.top-bar, .middle-bar, .bottom-bar {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
 
 
 
@@ -6,17 +32,20 @@
 
   span {
     &:first-child {
-      transform: rotate(-45deg) translate(-10px, 5px);
+      transform: rotate(-45deg) translate(-7px, 5px);
     }
     &:nth-child(2) {
       opacity: 0;
     }
     &:last-child {
-      transform: rotate(45deg) translate(-2px, 3px);
+      transform: rotate(45deg) translate(-6px, -4px);
     }
   }
 }
-/* 
+
+
+
+/*
 .blah{
   margin-right: 3%
 
