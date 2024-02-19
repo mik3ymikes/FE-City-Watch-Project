@@ -8,7 +8,16 @@
   transition: 0.4s;
 }
 
+.nav-item{
+  cursor: pointer;
+}
 
+.active{
+
+  border-bottom: 2px solid white;
+  /* transform: scale(1.1); */
+  transition:border-bottom 0.3s ease, color 0.3 ease, transform 0.3s ease
+}
 
 
 
