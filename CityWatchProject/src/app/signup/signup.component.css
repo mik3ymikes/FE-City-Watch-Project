@@ -82,10 +82,10 @@ input{
 }
 
 
-input:focus{
+/* input:focus{
   border-color: #007bff;
   outline: none;
-}
+} */
 
 button{
   padding: .75rem;
