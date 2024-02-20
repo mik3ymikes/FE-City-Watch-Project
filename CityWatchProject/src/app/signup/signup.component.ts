@@ -21,6 +21,8 @@ export class SignupComponent{
   loginForm: FormGroup=new FormGroup({
     username:new FormControl('', Validators.required),
     password:new FormControl('', Validators.required),
+    email:new FormControl('', Validators.required),
+    zipcode:new FormControl('', Validators.required),
 
 
 
