@@ -1,25 +1,25 @@
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup">
-  Launch demo modal
-</button> -->
 
-<!-- Modal -->
+<div class="modal">
 
-<div class="modal fade"  id="popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="popup">Modal title</h5>
-
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>stuff here</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+  <div class="container">
+    <form action="">
+      <span class="close">&times;</span>
+  <!-- <form [formGroup]="loginForm" (ngSubmit)="login()"> -->
+    <div class="form-group">
+      <label for="username">username</label>
+      <input type="text" formControlName="username">
     </div>
-  </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password" formControlName="password">
+    </div>
+
+    @if (isError) {
+      <p class="error">username and Password credientials failed. Please try again</p>
+    }
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div>
+
 </div>
