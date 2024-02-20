@@ -1,1 +1,25 @@
-<p>login works!</p>
+
+<div class="modal">
+
+  <div class=" container container-fluid">
+    <form action="">
+      <span (click)="close()" class="close">&times;</span>
+  <!-- <form [formGroup]="loginForm" (ngSubmit)="login()"> -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password">
+    </div>
+
+    @if (isError) {
+      <p class="error">username and Password credientials failed. Please try again</p>
+    }
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div>
+
+</div>
