@@ -41,7 +41,7 @@
   justify-content: center;
   min-height: 100vh;
   align-items: center;
-  /* background-color: #f0f0f0; */
+
 
 }
 
@@ -90,7 +90,7 @@ input:focus{
 button{
   padding: .75rem;
   border: none;
-  background-color: #eeb543;
+  background-color: #000000;
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
@@ -100,12 +100,12 @@ button{
 
 
 button:hover{
-  background-color:#d4a03f;
+  background-color:#000000;
 
 }
 
 button:disabled{
-  background-color: #b4914f;
+  background-color: #000000;
 }
 
 

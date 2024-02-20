@@ -17,15 +17,20 @@ export class SignupComponent{
   constructor(private router:Router){}
 
 
-  
+
   loginForm: FormGroup=new FormGroup({
     username:new FormControl('', Validators.required),
     password:new FormControl('', Validators.required),
 
 
+
+
+
   })
 
-
+close(){
+  this.router.navigate(['home']);
+}
 
 
 }
