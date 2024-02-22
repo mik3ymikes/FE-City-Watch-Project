@@ -4,7 +4,7 @@ export class Alert {
   id:number;
   content:string;
   created_at:string;
-  user:User;
+  user?:User;
 
 
 
@@ -12,7 +12,7 @@ export class Alert {
     this.id=alert.id || 0;
     this.content=alert.content || "";
     this.created_at=alert.created_at || "";
-    this.user=alert.user || null;
+    this.user=alert.user || new User({});
 
   }
 
