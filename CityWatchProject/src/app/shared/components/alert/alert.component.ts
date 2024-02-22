@@ -3,12 +3,12 @@ import { Alert } from '../../models/alert';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-alerts',
+  selector: 'app-alert',
   standalone: true,
   imports: [DatePipe],
-  templateUrl: './alerts.component.html',
-  styleUrl: './alerts.component.css'
+  templateUrl: './alert.component.html',
+  styleUrl: './alert.component.css'
 })
-export class AlertsComponent {
+export class AlertComponent {
 @Input({required:true}) alert:Alert=new Alert({})
 }

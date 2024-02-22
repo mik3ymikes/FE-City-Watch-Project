@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Alert } from '../../shared/models/alert';
+import { AlertComponent } from '../../shared/components/alert/alert.component';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [],
+  imports: [AlertComponent],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.css'
 })

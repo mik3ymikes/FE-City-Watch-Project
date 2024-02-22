@@ -1,1 +1,9 @@
-<p>timeline works!</p>
+<div class="container">
+  <div class="side-column"></div>
+   <div class="main-column">
+    @for(alert of alerts; track alert.id){
+      <app-alert [alert]="alert"/>
+    }
+   </div>
+  <div class="side-column"></div>
+</div>

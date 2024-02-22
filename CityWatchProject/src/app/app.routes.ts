@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AlertsComponent } from './shared/components/alerts/alerts.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './statistics/statistics.component';
