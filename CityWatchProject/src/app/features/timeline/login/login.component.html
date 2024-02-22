@@ -2,9 +2,8 @@
 <div class="modal">
 
   <div class=" container container-fluid">
-    <form action="">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
       <span (click)="close()" class="close">&times;</span>
-  <!-- <form [formGroup]="loginForm" (ngSubmit)="login()"> -->
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" formControlName="username">
@@ -15,7 +14,7 @@
     </div>
 
     @if (isError) {
-      <p class="error">username and Password credientials failed. Please try again</p>
+      <p class="error">Username and/or Password Incorrect!</p>
     }
 
     <button type="submit" [disabled]="!loginForm.valid">Login</button>
