@@ -16,7 +16,11 @@ export class TimelineComponent {
       id:1,
       content: "content 1",
       createdAt: "2021-01-02",
-      username: "mr pickles"
+      user:{
+        username: "bluey",
+        email: "bley@bluey.com",
+        zipcode: 34455
+      }
     })
   ]
 
