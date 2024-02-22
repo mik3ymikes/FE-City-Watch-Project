@@ -11,7 +11,9 @@ import { SignupComponent } from './signup/signup.component';
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {path:'events', component: EventzComponent},
-  {path:'alerts', component:AlertsComponent},
+  {path:'alerts', loadComponent: ()=>
+  import("./features/timeline/timeline.component").then((c) =>
+   c.TimelineComponent)},
   {path: 'statistics', component:StatisticsComponent},
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent},

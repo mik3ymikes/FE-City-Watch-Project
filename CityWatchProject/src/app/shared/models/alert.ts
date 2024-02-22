@@ -12,7 +12,7 @@ export class Alert {
     this.id=alert.id || 0;
     this.content=alert.content || "";
     this.createdAt=alert.createdAt || "";
-    this.user=alert.user || "";
+    this.user=alert.user || null;
 
   }
 
