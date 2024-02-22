@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { EventzComponent } from './eventz/eventz.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './features/timeline/login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 
