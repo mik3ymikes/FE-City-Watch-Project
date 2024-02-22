@@ -17,6 +17,13 @@ export class TimelineComponent implements OnInit {
   constructor(private alertService:AlertService){}
 
 ngOnInit(): void {
-this.alertService.getTimeLineAlerts
+this.alertService.getTimeLineAlerts().subscribe({
+  next: (alerts:Alert[])=>{
+    this.alerts=alerts
+  },
+  error: (error:any) =>{
+    console.error("Error fetching timeline posts", error)
+  }
+})
 }
 }

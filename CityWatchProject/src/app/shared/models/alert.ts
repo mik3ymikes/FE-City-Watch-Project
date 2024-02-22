@@ -3,7 +3,7 @@ import { User } from "./user";
 export class Alert {
   id:number;
   content:string;
-  createdAt:string;
+  created_at:string;
   user:User;
 
 
@@ -11,7 +11,7 @@ export class Alert {
   constructor(alert:any){
     this.id=alert.id || 0;
     this.content=alert.content || "";
-    this.createdAt=alert.createdAt || "";
+    this.created_at=alert.created_at || "";
     this.user=alert.user || null;
 
   }
