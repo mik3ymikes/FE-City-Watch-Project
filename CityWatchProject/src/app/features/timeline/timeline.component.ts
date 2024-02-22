@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Alert } from '../../shared/models/alert';
 import { AlertComponent } from '../../shared/components/alert/alert.component';
+import { AlertService } from '../../core/services/alert.service';
 
 @Component({
   selector: 'app-timeline',
@@ -9,22 +10,13 @@ import { AlertComponent } from '../../shared/components/alert/alert.component';
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.css'
 })
-export class TimelineComponent {
+export class TimelineComponent implements OnInit {
 
-  alerts: Alert[]=[
-    new Alert({
-      id:1,
-      content: "content 1",
-      createdAt: "2021-01-02",
-      user:{
-        username: "bluey",
-        email: "bley@bluey.com",
-        zipcode: 34455
-      }
-    })
-  ]
+  alerts: Alert[]=[]
 
-  constructor(){}
+  constructor(private alertService:AlertService){}
 
-
+ngOnInit(): void {
+this.alertService.getTimeLineAlerts
+}
 }

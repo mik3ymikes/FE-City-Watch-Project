@@ -11,7 +11,7 @@ export class AlertService {
 
   constructor(private http:HttpClient) { }
 
-  getTimeLinePosts(): Observable <Alert[]>{
+  getTimeLineAlerts(): Observable <Alert[]>{
    return this.http.get<Alert[]>(`${environment.apiUrl}/alerts`)
   }
 }
