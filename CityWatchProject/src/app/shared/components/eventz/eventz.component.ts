@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './eventz.component.html',
   styleUrl: './eventz.component.css'
 })
+
+
+
 export class EventzComponent {
 
 }
