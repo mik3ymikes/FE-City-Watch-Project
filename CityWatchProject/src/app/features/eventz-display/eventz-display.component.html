@@ -2,10 +2,32 @@
 <div class="container-fluid main-con">
   <div class="row">
 
-    <div class="col">
-      @for(event of events; track event.id){
+  @for(event of events; track event.id){
+        <div class="col-4">
         <app-eventz [event]="event"/>
-      }
-    </div>
+      </div>
+    }
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

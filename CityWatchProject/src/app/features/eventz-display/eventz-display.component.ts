@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from '../../shared/models/event'; 
+import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
+import { NgFor } from '@angular/common';
 
 
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
-  imports: [EventzComponent],
+  imports: [EventzComponent, NgFor],
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })
