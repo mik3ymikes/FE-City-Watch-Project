@@ -1,12 +1,12 @@
 <div class=" container container-fluid">
-  
+
   <p>{{event.content}}</p>
   <p>{{event.start_date_time}}</p>
   <p>{{event.end_date_time}}</p>
-<p>{{event.id}}</p>
-<!-- <p>{{event.user.username}}</p> -->
-<!-- <p>{{event.created_at | date}}</p> -->
-</div>
+<!-- <p>{{event.id}}</p>
+<p>{{event.user.username}}</p>
+<p>{{event.created_at | date}}</p> -->
+ </div>
 
 
 
@@ -15,4 +15,22 @@ content:string;
 start_date_time:string;
 end_date_time:string;
 created_at:string;
-user:User -->
+user:User;
+
+
+
+
+<div class="container">
+  <div class="post-header">
+    <div class="post-header-left">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
+      <div class="post-header-info">
+        <div class="post-header-info-name">{{event.content}}</div>
+        <div class="post-header-info-date">{{event.created_at | date}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="post-content">{{event.id}}</div>
+</div> -->
