@@ -37,8 +37,11 @@
           <a routerLink="/signup"><button  class="me-3 btn btn-secondary " ><strong>Sign up</strong></button> </a>
 
 
-
-          <a routerLink="/login"><button class="btn btn-secondary"> <strong>Login</strong> </button> </a>
+           @if (isLoggedIn()){
+             <a  (click)="logout()" ><button class="btn btn-secondary"> <strong>Logout</strong> </button> </a>
+           } @else {
+            <a routerLink="/login"><button class="btn btn-secondary"> <strong>Login</strong> </button> </a>
+           }
         </div>
 
       </div>

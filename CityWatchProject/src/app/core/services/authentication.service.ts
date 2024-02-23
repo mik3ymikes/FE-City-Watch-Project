@@ -2,11 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+  private readonly tokenSubject = new BehaviorSubject<string | null>(null);
+
 
   constructor(private http:HttpClient, private router:Router) { }
 
@@ -18,6 +21,7 @@ export class AuthenticationService {
   }
   setToken(token:string){
     localStorage.setItem('token', token)
+    this.tokenSubject.next(token);
   }
 
   getToken(){
@@ -31,6 +35,7 @@ export class AuthenticationService {
 
   logout(){
     localStorage.removeItem('token')
+    this.tokenSubject.next(null);
     this.router.navigate(['/login'])
   }
 }
