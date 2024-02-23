@@ -19,14 +19,14 @@ events: Event[]=[]
 constructor(private eventService:EventService){}
 
 ngOnInit(): void {
-  // this.eventService.getEvents().subscribe({
-  //   next: (events:Event[])=>{
-  //     this.events=events
-  //   },
-  //   error: (error:any) =>{
-  //     console.error("Error fetching timeline events", error)
-  //   }
-  // })
+  this.eventService.getEvents().subscribe({
+    next: (events:Event[])=>{
+      this.events=events
+    },
+    error: (error:any) =>{
+      console.error("Error fetching timeline events", error)
+    }
+  })
 
 
 }
