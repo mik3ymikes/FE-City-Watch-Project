@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../shared/models/event';
-import { EventzComponent } from '../../shared/components/eventz/eventz.component';import { EventService } from '../../core/services/event.service';
+import { EventzComponent } from '../../shared/components/eventz/eventz.component';
+import { EventService } from '../../core/services/event.service';
 
 
 @Component({
@@ -18,14 +19,14 @@ events: Event[]=[]
 constructor(private eventService:EventService){}
 
 ngOnInit(): void {
-  this.eventService.getEvents().subscribe({
-    next: (events:Event[])=>{
-      this.events=events
-    },
-    error: (error:any) =>{
-      console.error("Error fetching timeline events", error)
-    }
-  })
+  // this.eventService.getEvents().subscribe({
+  //   next: (events:Event[])=>{
+  //     this.events=events
+  //   },
+  //   error: (error:any) =>{
+  //     console.error("Error fetching timeline events", error)
+  //   }
+  // })
 
 
 }
