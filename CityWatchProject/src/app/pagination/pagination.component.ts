@@ -1,5 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, Input, OnInit} from '@angular/core';
+import { EventService } from '../core/services/event.service';
+import { Event } from '../shared/models/event';
 
 @Component({
   selector: 'app-pagination',
@@ -10,12 +12,29 @@ import { Component, Input, OnInit} from '@angular/core';
 })
 
 
-export class PaginationComponent implements OnInit {
-  ngOnInit(): void {}
 
-  items: any[] = []; // Your list of items
+
+export class PaginationComponent implements OnInit {
+  items: Event[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 10;
+
+  constructor(private eventService:EventService){}
+
+  ngOnInit(): void {
+    this.eventService.getEvents().subscribe({
+      next:(items:Event[])=>{
+        this.items=items
+      },
+      error: (error:any) =>{
+        console.error("Error fetching timeline items", error)
+      }
+    })
+
+
+  }
+
+
 
   get paginatedItems() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
