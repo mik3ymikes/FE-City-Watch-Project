@@ -7,6 +7,7 @@ import { EventzComponent } from './eventz/eventz.component';
 import { LoginComponent } from './features/timeline/login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { authGuard } from './core/guards/auth.guard';
+import { noAuthGuard } from './core/guards/no-auth.guard';
 
 
 export const routes: Routes = [
@@ -18,7 +19,7 @@ export const routes: Routes = [
   import("./features/timeline/timeline.component").then((c) =>
    c.TimelineComponent), canActivate: [authGuard] },
   {path: 'statistics', component:StatisticsComponent},
-  {path: 'login', component:LoginComponent},
+  {path: 'login', component:LoginComponent, canActivate: [noAuthGuard]},
   {path: 'signup', component:SignupComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
