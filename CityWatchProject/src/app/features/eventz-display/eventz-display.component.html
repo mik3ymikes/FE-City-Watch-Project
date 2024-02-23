@@ -1,1 +1,6 @@
-<p>eventz-display works!</p>
+
+<div>
+  @for(event of events; track event.id){
+    <app-eventz [event]="event"/>
+  }
+</div>
