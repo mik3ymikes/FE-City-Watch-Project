@@ -1,12 +1,16 @@
-<div class=" container container-fluid">
+<div class="event-con">
+  <!-- <div class="row">
+    <div class="col col-3"> -->
 
-  <p>{{event.content}}</p>
-  <p>{{event.start_date_time}}</p>
-  <p>{{event.end_date_time}}</p>
-<!-- <p>{{event.id}}</p>
-<p>{{event.user.username}}</p>
-<p>{{event.created_at | date}}</p> -->
- </div>
+      <p>{{event.start_date_time | date}} - {{event.end_date_time | date}}</p>
+
+      <p>{{event.content}}</p>
+
+      <p>{{event.user?.username}}</p>
+      <p>{{event.created_at | date}}</p>
+    </div>
+<!-- </div>
+ </div> -->
 
 
 
