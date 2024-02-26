@@ -11,7 +11,13 @@
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" formControlName="password">
+
     </div>
+    @if (isLoading) {
+   <div style="text-align: center;">
+        <app-loading-spinner></app-loading-spinner>
+   </div>
+    }
 
     @if (isError) {
       <p class="error">Username and/or Password Incorrect!</p>
