@@ -3,6 +3,7 @@ import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
 import { PaginationComponent } from '../../pagination/pagination.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -22,7 +23,7 @@ itemsPerPage: number = 18;
 
 
 
-constructor(private eventService:EventService){}
+constructor(private eventService:EventService, private router:Router, private route:ActivatedRoute){}
 
 ngOnInit(): void {
   this.eventService.getEvents().subscribe({
@@ -34,9 +35,14 @@ ngOnInit(): void {
     }
   })
 
+this.route.queryParams.subscribe(params=>{
+    const page=params['page'] ? Number(params['page']) :1
 
+  })
 
 }
+
+
 
 
 
@@ -48,7 +54,11 @@ get paginatedItems() {
 
 onPageChange(pageNumber: number) {
   this.currentPage = pageNumber;
-}
+  this.router.navigate([], {
+    relativeTo:this.route,
+    queryParams: {page:this.currentPage +1},
+    queryParamsHandling: 'merge'
+}) }
 
 pages(): number[] {
   const totalItems = this.events.length;
