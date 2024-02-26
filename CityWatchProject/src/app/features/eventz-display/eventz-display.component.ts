@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
-import { PaginationComponent } from '../../pagination/pagination.component';
+// import { PaginationComponent } from '../../pagination/pagination.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
-  imports: [EventzComponent, PaginationComponent],
+  imports: [EventzComponent],
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })
@@ -23,15 +23,16 @@ itemsPerPage: number = 18;
 
 
 
-constructor(private eventService:EventService, private router:Router, private route:ActivatedRoute){}
+constructor(private eventService:EventService,
+  private router:Router, private route:ActivatedRoute){}
 
 ngOnInit(): void {
 
 
   this.route.queryParams.subscribe(params=>{
-      const page=params['page'] ? Number(params['page']) :1
-      // this.loadevents(page)
-      
+      this.currentPage=params['page'] ? Number(params['page']) :1
+
+
     })
 
   this.eventService.getEvents().subscribe({
@@ -49,7 +50,6 @@ ngOnInit(): void {
 
 
 
-
 get paginatedItems() {
   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
   const endIndex = startIndex + this.itemsPerPage;
@@ -60,7 +60,7 @@ onPageChange(pageNumber: number) {
   this.currentPage = pageNumber;
   this.router.navigate([], {
     relativeTo:this.route,
-    queryParams: {page:this.currentPage +1},
+    queryParams: {page:this.currentPage},
     queryParamsHandling: 'merge'
 }) }
 
