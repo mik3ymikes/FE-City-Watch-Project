@@ -26,6 +26,13 @@ itemsPerPage: number = 18;
 constructor(private eventService:EventService, private router:Router, private route:ActivatedRoute){}
 
 ngOnInit(): void {
+
+
+  this.route.queryParams.subscribe(params=>{
+      const page=params['page'] ? Number(params['page']) :1
+
+    })
+
   this.eventService.getEvents().subscribe({
     next: (events:Event[])=>{
       this.events=events
@@ -35,10 +42,6 @@ ngOnInit(): void {
     }
   })
 
-this.route.queryParams.subscribe(params=>{
-    const page=params['page'] ? Number(params['page']) :1
-
-  })
 
 }
 
