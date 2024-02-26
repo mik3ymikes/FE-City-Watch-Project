@@ -1,24 +1,38 @@
-<!-- <div *ngFor="let item of paginatedItems">
+<!-- 
+<div class="container-fluid main-con">
+  <div class="row gy-3">
 
-  <p>{{ item }}</p>
-</div> -->
+  @for(event of paginatedItems; track event.id){
+        <div class="col-lg-4">
+        <app-eventz [event]="event"/>
+      </div>
+    }
+  </div>
 
-<!-- <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li class="page-item" [class.disabled]="currentPage === 1">
-      <a class="page-link" (click)="onPageChange(currentPage - 1)" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
 
-    <li class="page-item" *ngFor="let page of pages()" [class.active]="page === currentPage">
-      <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
-    </li>
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="onPageChange(currentPage - 1)" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
 
-    <li class="page-item" [class.disabled]="currentPage === totalPages()">
-      <a class="page-link" (click)="onPageChange(currentPage + 1)" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav> -->
+      @for(page of pages(); track page){
+        <li class="page-item"  [class.active]="page === currentPage">
+          <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+        </li>
+      }
+
+
+      <li class="page-item" [class.disabled]="currentPage === totalPages()">
+        <a class="page-link" (click)="onPageChange(currentPage + 1)" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+ -->
