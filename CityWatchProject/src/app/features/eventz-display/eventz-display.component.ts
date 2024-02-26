@@ -6,15 +6,19 @@ import { PaginationComponent } from '../../pagination/pagination.component';
 
 
 
+
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
-  imports: [EventzComponent, PaginationComponent ],
+  imports: [EventzComponent, PaginationComponent],
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
+currentPage: number = 1;
+itemsPerPage: number = 18;
+
 
 
 
@@ -31,5 +35,30 @@ ngOnInit(): void {
   })
 
 
+
+}
+
+
+
+get paginatedItems() {
+  const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  const endIndex = startIndex + this.itemsPerPage;
+  return this.events.slice(startIndex, endIndex);
+}
+
+onPageChange(pageNumber: number) {
+  this.currentPage = pageNumber;
+}
+
+pages(): number[] {
+  const totalItems = this.events.length;
+const totalPages = Math.ceil(totalItems / this.itemsPerPage);
+  const pagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
+  return pagesArray;
+}
+
+totalPages(): number {
+  return this.pages().length;
 }
 }
+
