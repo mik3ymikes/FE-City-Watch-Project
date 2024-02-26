@@ -31,6 +31,7 @@ ngOnInit(): void {
   this.route.queryParams.subscribe(params=>{
       const page=params['page'] ? Number(params['page']) :1
       // this.loadevents(page)
+      
     })
 
   this.eventService.getEvents().subscribe({
