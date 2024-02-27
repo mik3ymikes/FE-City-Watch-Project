@@ -8,34 +8,16 @@
 
 # Front-end architecture, including the main aspects of your application
 
-2.
+2. The front end offers a navbar in which a user can navigate freely between events, alerts, and statistics. A user must be signed in with a zip code to view content releated to their perspective area.
 
 # Setup instructions to start the project.
 
-3. Users will need to install angular version 17 and Node.js version 20.
+3. Users will need to install angular version 17 and Node.js version 20. A user will need to run the backend on ruby on rails to store and retrieve data.
 
-# set of gems utilized in the project other than the default added gems
+# Packages utilized in the project
 
-4. Gems that will need to be installled are the following:
-
-   rack-cors-so that the backend can communicate with the frontend
-
-   bcrypt-This gem was used to hash and securely store passwords.
-
-   jwt-This helps authenticate and generate a token that will be stored for authorizaton.
-
-   faker-This helps generate fake data for testing
-
-   factory_bot_rail-This gem is used for creating and managing test data. It provides a convenient and flexible way to define and build model instances
-
-# Testing
-
-5. This API utilizes over 50 tests to ensure validity.
-
-Models-Test were written to make sure usernames, passwords, emails, zipcodes are all present and unique and that test fail when this criteria isnt met. Passwords must be hashed and alerts and comments are all deleted when a user is destroyed.
-
-requests-Test are written to return specified params, such as Bearer token and certain amount of content or deleted content. Session request test are written to verify successful http requests and logins.
+4. Bootstrap is all that is required ATM.
 
 # url to your Front end Project's repository
 
-6. https://github.com/mik3ymikes/FE-City-Watch-Project
+5. https://github.com/mik3ymikes/BeCityWatch
