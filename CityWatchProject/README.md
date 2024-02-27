@@ -1,27 +1,41 @@
-# CityWatchProject
+# README
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+⚠️This is the City Watch Front end documentation ⚠️
 
-## Development server
+# Front-end purpose, target audience and scope.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. The targeted audience is members of any particular city that want to keep up with with alerts and events in their town. Users can log in, add content and comments, and view alerts in the area.
 
-## Code scaffolding
+# Front-end architecture, including the main aspects of your application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2.
 
-## Build
+# Setup instructions to start the project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Users will need to install angular version 17 and Node.js version 20.
 
-## Running unit tests
+# set of gems utilized in the project other than the default added gems
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Gems that will need to be installled are the following:
 
-## Running end-to-end tests
+   rack-cors-so that the backend can communicate with the frontend
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   bcrypt-This gem was used to hash and securely store passwords.
 
-## Further help
+   jwt-This helps authenticate and generate a token that will be stored for authorizaton.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   faker-This helps generate fake data for testing
+
+   factory_bot_rail-This gem is used for creating and managing test data. It provides a convenient and flexible way to define and build model instances
+
+# Testing
+
+5. This API utilizes over 50 tests to ensure validity.
+
+Models-Test were written to make sure usernames, passwords, emails, zipcodes are all present and unique and that test fail when this criteria isnt met. Passwords must be hashed and alerts and comments are all deleted when a user is destroyed.
+
+requests-Test are written to return specified params, such as Bearer token and certain amount of content or deleted content. Session request test are written to verify successful http requests and logins.
+
+# url to your Front end Project's repository
+
+6. https://github.com/mik3ymikes/FE-City-Watch-Project

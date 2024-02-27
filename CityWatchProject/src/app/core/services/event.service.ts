@@ -17,8 +17,8 @@ export class EventService {
   }
 
   // may need to delete this for pages pagition
-  getEventsPage(page:number){
-    return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
-}
+//   getEventsPage(page:number){
+//     return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
+// }
 
 }
