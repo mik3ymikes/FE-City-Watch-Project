@@ -4,20 +4,20 @@
   <div class=" container container-fluid">
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <span (click)="close()" class="close">&times;</span>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" formControlName="username">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" formControlName="password">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password">
 
-    </div>
-    @if (isLoading) {
-   <div style="text-align: center;">
-        <app-loading-spinner></app-loading-spinner>
-   </div>
-    }
+      </div>
+      @if (isLoading) {
+     <div style="text-align: center;">
+          <app-loading-spinner></app-loading-spinner>
+     </div>
+      }
 
     @if (isError) {
       <p class="error">Username and/or Password Incorrect!</p>
