@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary p-3" data-bs-theme="dark">
+<nav class="navbar navbar-expand-xl bg-body-tertiary p-3" data-bs-theme="dark">
   <div class="container-fluid">
     <div class="navbar-brand webTitle fs-2"> NiteWatch
     <img class="owl" src="https://images.unsplash.com/photo-1555677284-6a6f971638e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b3dsJTIwY2FydG9vbnxlbnwwfHwwfHx8MA%3D%3D" alt="" width="45" height="45">
@@ -29,6 +29,16 @@
           <a routerLink="/statistics" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}"class="nav-link">Statistics 🚨</a>
         </li>
+        @if (isLoggedIn()) {
+          <li  class="nav-link greeting" >
+              Welcome Neighbor! 🙋‍♂️
+          </li>
+        }
+          <!-- @if (isLoading) {
+            <li  class="nav-item nav-link" style="text-align: center;">
+                 <app-loading-spinner ></app-loading-spinner>
+            </li>
+           } -->
       </ul>
 
       <div class="navbar-end">

@@ -48,3 +48,13 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 
 
 
+.greeting{
+  color: white;
+  font-size: larger;
+  
+  font-family: monospace;
+  font-style: italic;
+  margin-left: 2px;
+
+
+}
