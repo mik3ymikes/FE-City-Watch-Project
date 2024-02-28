@@ -1,0 +1,25 @@
+
+.nav-item{
+  cursor: pointer;
+  color: white;
+}
+
+
+.active{
+
+  border-bottom: 2px solid white;
+  /* transform: scale(1.1); */
+  transition:border-bottom 0.3s ease, color 0.3 ease, transform 0.3s ease
+}
+
+
+
+
+
+.navbar{
+  position: fixed;
+  padding: 10px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
