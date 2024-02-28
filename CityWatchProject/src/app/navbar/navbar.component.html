@@ -31,7 +31,7 @@
         </li>
         @if (isLoggedIn()) {
           <li  class="nav-link greeting" >
-              Welcome Neighbor! 🙋‍♂️
+              Welcome Neighbor, {{currentUser?.username}}! 🙋‍♂️
           </li>
         }
           <!-- @if (isLoading) {
