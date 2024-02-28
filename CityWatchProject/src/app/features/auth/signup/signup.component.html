@@ -2,8 +2,8 @@
 <div class="modal">
 
   <div class=" container container-fluid">
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
       <span (click)="close()" class="close">&times;</span>
-  <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
 
     <div class="form-group">
       <label for="username">Username</label>

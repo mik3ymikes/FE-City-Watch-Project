@@ -9,7 +9,7 @@ import { LoadingSpinnerComponent } from '../../../shared/loading-spinner/loading
   standalone: true,
   imports: [ReactiveFormsModule, LoadingSpinnerComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: '../auth.shared.css'
 })
 
 
