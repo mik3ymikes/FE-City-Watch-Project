@@ -31,7 +31,7 @@
   position: absolute;
   z-index: 1;
   color: white;
-  top: 20%;
+  top: 15%;
   left:15%;
   text-align: center;
   font-style: italic;
@@ -43,7 +43,9 @@
   position: absolute;
   z-index: 1;
   color: white;
-  top: 40%;
-  left:10%
+  top: 45%;
+  left:15%;
+  /* text-align: center; */
+  width: 80%;
 
 }
