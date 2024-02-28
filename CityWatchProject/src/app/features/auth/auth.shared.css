@@ -105,3 +105,9 @@ button:disabled{
 .error{
   color: red;
 }
+
+
+.background-img{
+  position: absolute;
+  z-index: -5;
+}
