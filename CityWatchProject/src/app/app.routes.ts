@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 
 import { LoginComponent } from './features/timeline/login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './features/signup/signup.component';
 import { authGuard } from './core/guards/auth.guard';
 import { noAuthGuard } from './core/guards/no-auth.guard';
 

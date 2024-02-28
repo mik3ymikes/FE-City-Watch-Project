@@ -2,9 +2,9 @@
 <div class="modal">
 
   <div class=" container container-fluid">
-    <form action="">
       <span (click)="close()" class="close">&times;</span>
-  <!-- <form [formGroup]="loginForm" (ngSubmit)="login()"> -->
+  <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" formControlName="username">
@@ -14,6 +14,10 @@
       <input type="password" formControlName="password">
     </div>
     <div class="form-group">
+      <label for="password_confirmation"> confirm password</label>
+      <input type="password" formControlName="password_confirmation">
+    </div>
+    <div class="form-group">
       <label for="username">Email</label>
       <input type="text" formControlName="email">
     </div>
@@ -21,13 +25,10 @@
       <label for="username">Zipcode</label>
       <input type="text" formControlName="zipcode">
     </div>
+    @for(error of errors; track $index){
+      <p class="error">{{error}}</p>
+     }
+    <button type="submit" >Sign Up</button>
+    </form>
+  </div>
 
-    @if (isError) {
-      <p class="error">username and Password credientials failed. Please try again</p>
-    }
-
-    <button type="submit" [disabled]="!loginForm.valid">Signup</button>
-  </form>
-</div>
-
-</div>
