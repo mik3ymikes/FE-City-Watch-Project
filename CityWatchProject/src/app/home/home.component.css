@@ -5,12 +5,20 @@
 }
 
 
-
-
 .main-con{
   background-color: red;
+  height: 100vh;
 }
 
-.img-fluid{
+
+.heading{
   width: 100%;
+background-color: blue;
+}
+
+
+.houses{
+  width: 100%;
+  height: 35rem;
+
 }
