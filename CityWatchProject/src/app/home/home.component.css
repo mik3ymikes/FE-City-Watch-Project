@@ -6,8 +6,12 @@
 
 
 .main-con{
-  /* background-color: red; */
-  height: 100vh;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  /* height: 100%; */
+  min-height: 100vh;
 }
 
 
@@ -47,5 +51,13 @@
   left:15%;
   /* text-align: center; */
   width: 80%;
+
+}
+
+
+.closing{
+  background-color: green;
+  flex: 1;
+  /* height: 100%; */
 
 }
