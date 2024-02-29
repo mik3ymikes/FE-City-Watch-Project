@@ -44,7 +44,9 @@
       <div class="navbar-end">
 
         <div class="nav-item">
-          <a routerLink="/signup"><button  class="me-3 btn btn-secondary " ><strong>Sign up</strong></button> </a>
+          @if (!isLoggedIn()) {
+            <a routerLink="/signup"><button  class="me-3 btn btn-secondary " ><strong>Sign up</strong></button> </a>
+          }
 
 
            @if (isLoggedIn()){
