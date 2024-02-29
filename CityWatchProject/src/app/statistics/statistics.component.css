@@ -1,3 +1,12 @@
 .wrapper{
   min-height: 100vh;
 }
+
+
+.main-con{
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
