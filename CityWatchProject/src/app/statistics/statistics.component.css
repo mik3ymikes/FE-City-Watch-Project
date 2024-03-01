@@ -7,7 +7,7 @@
   /* background-color: yellow; */
   display: flex;
   flex-direction: column;
-
+  width: 86%;
   min-height: 100vh;
 }
 
@@ -20,6 +20,7 @@
 .photo2{
   width: 20%;
   border-radius: 50%;
+
 }
 
 .crime-con{
@@ -33,3 +34,4 @@
 
 
 }
+
