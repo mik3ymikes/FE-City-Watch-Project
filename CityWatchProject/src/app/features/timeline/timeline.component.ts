@@ -15,7 +15,7 @@ export class TimelineComponent implements OnInit {
 
   alerts: Alert[]=[]
   currentPage: number = 1;
-  itemsPerPage: number = 15;
+  itemsPerPage: number = 10;
 
   constructor(private alertService:AlertService,
     private router:Router, private route:ActivatedRoute){}
@@ -25,7 +25,7 @@ ngOnInit(): void {
     this.currentPage=params['page'] ? Number(params['page']) :1
   })
 
-  
+
 this.alertService.getTimeLineAlerts().subscribe({
   next: (alerts:Alert[])=>{
     this.alerts=alerts
