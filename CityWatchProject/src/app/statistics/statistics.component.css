@@ -17,7 +17,19 @@
   height: 20rem;
 }
 
+.photo2{
+  width: 20%;
+  border-radius: 50%;
+}
 
 .crime-con{
-  
+
+}
+
+
+.tips-con{
+  background-color: black;
+  color: white;
+
+
 }
