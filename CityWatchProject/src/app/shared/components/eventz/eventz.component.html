@@ -1,40 +1,41 @@
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{event.title}}</h5>
+    <p class="card-text">{{event.content}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Event Time- {{event.start_date_time | date}} - {{event.end_date_time | date}}</li>
+    <li class="list-group-item">Event Created at- {{event.created_at | date}}</li>
+    <li class="list-group-item">Created by- {{event.user}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="event-con">
-  <!-- <div class="row">
-    <div class="col col-3"> -->
+
       <p> {{event.title}}</p>
       <p>{{event.start_date_time | date}} - {{event.end_date_time | date}}</p>
 
       <p>{{event.content}}</p>
 
-      <!-- <p>{{event.user?.username}}</p> -->
+
       <p>{{event.created_at | date}}</p>
-    </div>
-<!-- </div>
- </div> -->
-
-
-
-<!-- id:number;
-content:string;
-start_date_time:string;
-end_date_time:string;
-created_at:string;
-user:User;
-
-
-
-
-<div class="container">
-  <div class="post-header">
-    <div class="post-header-left">
-      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
-      <div class="post-header-info">
-        <div class="post-header-info-name">{{event.content}}</div>
-        <div class="post-header-info-date">{{event.created_at | date}}</div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="post-content">{{event.id}}</div>
-</div> -->
+    </div> -->
