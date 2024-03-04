@@ -1,9 +1,9 @@
 
-<div class="container-fluid main-con ">
-  <div class="row gy-3  ">
+<div class="container main-con">
+  <div class="row justify-content-center" >
 
   @for(event of paginatedItems; track event.id){
-    <div class="col-lg-3 main">
+    <div class="col-auto ">
         <app-eventz [event]="event"/>
       </div>
     }
