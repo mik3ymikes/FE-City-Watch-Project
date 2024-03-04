@@ -2,15 +2,23 @@
   margin-top: 1%;
 }
 
+
 .main-con{
-  /* border: solid 1px black; */
-  /* margin: 0 auto; */
+  /* border: solid 1px black;
+  margin: 0 auto; */
+
 }
 
 
 
 .pagination{
   margin-top: 1%;
+}
+
+
+.main{
+  background-color: red;
+  /* margin: 0 auto; */
 }
 
 
