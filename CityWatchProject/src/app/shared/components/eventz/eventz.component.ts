@@ -19,3 +19,4 @@ export class EventzComponent {
   // may have to check this
   @Input({required:true}) event:Event=new Event({})
 }
+
