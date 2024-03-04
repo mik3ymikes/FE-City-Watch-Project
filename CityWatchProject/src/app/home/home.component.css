@@ -56,11 +56,19 @@
 
 
 .closing{
-  /* background-color: black; */
+ 
   flex: 1;
-  /* height: 100%; */
+
 
 }
+
+
+/* .card {
+
+  border: 2px solid black;
+
+} */
+
 
 
 
