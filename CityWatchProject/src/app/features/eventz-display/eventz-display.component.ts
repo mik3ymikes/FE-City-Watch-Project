@@ -18,7 +18,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
 currentPage: number = 1;
-itemsPerPage: number = 18;
+itemsPerPage: number = 20;
 
 
 
