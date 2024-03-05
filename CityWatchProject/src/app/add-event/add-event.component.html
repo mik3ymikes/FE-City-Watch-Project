@@ -28,7 +28,7 @@
     @for(error of errors; track $index){
       <p class="error">{{error}}</p>
     }
-    <button type="submit" >Add Event </button>
+    <button type="submit" [disabled]="!addEventForm.valid" >Add Event </button>
   </form>
 </div>
 </div>
