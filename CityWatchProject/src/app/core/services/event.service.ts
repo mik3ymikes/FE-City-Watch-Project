@@ -16,6 +16,13 @@ export class EventService {
     return this.http.get<Event[]>(`${environment.apiUrl}/events`)
   }
 
+
+  createEvent(): Observable <Event>{
+    return this.http.post<Event>(`${environment.apiUrl}/events`,{})
+  }
+
+
+
   // may need to delete this for pages pagition
 //   getEventsPage(page:number){
 //     return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
