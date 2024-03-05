@@ -5,16 +5,16 @@
   <div class="modal">
 
     <div class=" container container-fluid">
-      <form [formGroup]="signupForm" (ngSubmit)="onAddEvent()">
+      <form [formGroup]="addEventForm" (ngSubmit)="onAddEvent()">
         <span (click)="close()" class="close">&times;</span>
 
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" formControlName="username">
+          <label for="title">Title</label>
+          <input type="text" formControlName="title">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" formControlName="password">
+          <label for="content">Content</label>
+          <input type="text" formControlName="content">
         </div>
     <div class="form-group">
       <label for="password_confirmation"> confirm password</label>

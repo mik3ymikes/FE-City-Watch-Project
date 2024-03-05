@@ -19,18 +19,17 @@ export class AddEventComponent {
 
 
 
-  signupForm: FormGroup=new FormGroup({
-    username:new FormControl('', Validators.required),
-    password:new FormControl('', Validators.required),
-    password_confirmation:new FormControl('', Validators.required),
-    email:new FormControl('', Validators.required),
-    zipcode:new FormControl('', Validators.required),
+  addEventForm: FormGroup=new FormGroup({
+    title:new FormControl('', Validators.required),
+    content:new FormControl('', Validators.required),
+    start_date_time:new FormControl('', Validators.required),
+    end_date_time:new FormControl('', Validators.required),
 
   })
 
 
   onAddEvent(){
-    const formValue=this.signupForm.value
+    const formValue=this.addEventForm.value
     //  this.authService.signup(formValue).subscribe({
     //   next: (res:any)=>{
     //     this.router.navigate(['/events'])
