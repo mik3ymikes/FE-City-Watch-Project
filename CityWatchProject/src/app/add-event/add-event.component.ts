@@ -21,9 +21,9 @@ export class AddEventComponent {
 
   addEventForm: FormGroup=new FormGroup({
     title:new FormControl('', Validators.required),
-    content:new FormControl('', Validators.required),
     start_date_time:new FormControl('', Validators.required),
     end_date_time:new FormControl('', Validators.required),
+    content:new FormControl('', Validators.required)
 
   })
 

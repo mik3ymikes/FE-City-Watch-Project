@@ -7,23 +7,23 @@
     <div class=" container container-fluid">
       <form [formGroup]="addEventForm" (ngSubmit)="onAddEvent()">
         <span (click)="close()" class="close">&times;</span>
-
+        <h1 class="text-center">Add an Event</h1>
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" formControlName="title">
         </div>
         <div class="form-group">
+          <label for="start_date_time"> Start Date</label>
+          <input type="date" formControlName="start_date_time">
+        </div>
+        <div class="form-group">
+          <label for="end_date_time">End Date</label>
+          <input type="date" formControlName="end_date_time">
+        </div>
+        <div class="form-group">
           <label for="content">Content</label>
           <input type="text" formControlName="content">
         </div>
-    <div class="form-group">
-      <label for="start_date_time"> Start Date</label>
-      <input type="date" formControlName="start_date_time">
-    </div>
-    <div class="form-group">
-      <label for="end_date_time">End Date</label>
-      <input type="date" formControlName="end_date_time">
-    </div>
 
     @for(error of errors; track $index){
       <p class="error">{{error}}</p>
