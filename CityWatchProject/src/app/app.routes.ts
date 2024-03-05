@@ -8,6 +8,7 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { SignupComponent } from './features/auth/signup/signup.component';
 import { authGuard } from './core/guards/auth.guard';
 import { noAuthGuard } from './core/guards/no-auth.guard';
+import { AddEventComponent } from './add-event/add-event.component';
 
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
   {path: 'statistics', component:StatisticsComponent},
   {path: 'login', component:LoginComponent, canActivate: [noAuthGuard]},
   {path: 'signup', component:SignupComponent},
+  {path: 'addEvent', component:AddEventComponent, canActivate: [authGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
