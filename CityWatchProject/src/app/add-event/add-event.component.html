@@ -17,21 +17,18 @@
           <input type="text" formControlName="content">
         </div>
     <div class="form-group">
-      <label for="password_confirmation"> confirm password</label>
-      <input type="password" formControlName="password_confirmation">
+      <label for="start_date_time"> Start Date</label>
+      <input type="date" formControlName="start_date_time">
     </div>
     <div class="form-group">
-      <label for="username">Email</label>
-      <input type="text" formControlName="email">
+      <label for="end_date_time">End Date</label>
+      <input type="date" formControlName="end_date_time">
     </div>
-    <div class="form-group">
-      <label for="username">Zipcode</label>
-      <input type="text" formControlName="zipcode">
-    </div>
+
     @for(error of errors; track $index){
       <p class="error">{{error}}</p>
     }
-    <button type="submit" >Sign Up</button>
+    <button type="submit" >Add Event </button>
   </form>
 </div>
 </div>
