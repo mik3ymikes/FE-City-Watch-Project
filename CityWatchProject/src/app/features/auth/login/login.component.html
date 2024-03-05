@@ -4,6 +4,7 @@
   <div class=" container container-fluid">
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <span (click)="close()" class="close">&times;</span>
+      <h1 class="text-center">Login</h1>
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" formControlName="username">
