@@ -12,7 +12,7 @@ import { authInterceptor } from './core/interceptors/auth.interceptor';
 
 export function initializeUserData(
   userService:UserService, authService:AuthenticationService){
-  console.log("THIS EXEC")
+
   if(authService.isLoggedIn()){
     return () =>userService.getBootstrapData().subscribe()
 
