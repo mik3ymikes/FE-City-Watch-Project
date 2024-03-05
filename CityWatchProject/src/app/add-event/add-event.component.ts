@@ -29,24 +29,37 @@ export class AddEventComponent {
   })
 
 
-  onSignup(){
+  onAddEvent(){
     const formValue=this.signupForm.value
-     this.authService.signup(formValue).subscribe({
-      next: (res:any)=>{
-        this.router.navigate(['/login'])
-      },
-      error: (error:any) =>{
-        console.log(error.error)
-        this.errors=error.error
-      }
-     })
+    //  this.authService.signup(formValue).subscribe({
+    //   next: (res:any)=>{
+    //     this.router.navigate(['/events'])
+    //   },
+    //   error: (error:any) =>{
+    //     console.log(error.error)
+    //     this.errors=error.error
+    //   }
+    //  })
    }
 
+
+  //  onAddEvent(){
+  //   const formValue=this.signupForm.value
+  //    this.authService.signup(formValue).subscribe({
+  //     next: (res:any)=>{
+  //       this.router.navigate(['/'])
+  //     },
+  //     error: (error:any) =>{
+  //       console.log(error.error)
+  //       this.errors=error.error
+  //     }
+  //    })
+  //  }
 
 
 
 close(){
-  this.router.navigate(['home']);
+  this.router.navigate(['/events']);
 }
 
 
