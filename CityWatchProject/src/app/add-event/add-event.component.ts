@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from '../core/services/authentication.service';
 import { Router } from '@angular/router';
-
+import { EventService } from '../core/services/event.service';
+import { Event } from '../shared/models/event';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class AddEventComponent {
   isError:boolean=false
   errors:string[]=[]
 
-  constructor(private authService:AuthenticationService, private router:Router){}
+  constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
 
 
 
@@ -31,9 +32,10 @@ export class AddEventComponent {
 
 
   onAddEvent(){
-    const formValue=this.addEventForm.value
-    //  this.authService.signup(formValue).subscribe({
-    //   next: (res:any)=>{
+    // const formValue=this.addEventForm.value
+    //  this.eventService.createEvent(formValue).subscribe({
+    //   next: (event:Event)=>{
+    //     console.log('event created', event)
     //     this.router.navigate(['/events'])
     //   },
     //   error: (error:any) =>{
