@@ -23,7 +23,7 @@ export class EventService {
   }
 
 
-  // createEvent(Event:Event){
+  // createEvent(event:Event){
   //   return this.http.post(`${environment.apiUrl}/events`, event)
   // }
 
