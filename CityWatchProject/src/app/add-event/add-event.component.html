@@ -5,7 +5,7 @@
   <div class="modal">
 
     <div class=" container container-fluid">
-      <form [formGroup]="addEventForm" (ngSubmit)="onAddEvent()">
+      <form [formGroup]="addEventForm" (ngSubmit)="onAddEvent()" class="form">
         <span (click)="close()" class="close">&times;</span>
         <h1 class="text-center">Add an Event</h1>
         <div class="form-group">
