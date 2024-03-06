@@ -33,18 +33,18 @@ export class AddEventComponent {
 
 
   onAddEvent(){
-    const formValue=this.addEventForm.value
-    console.log(formValue)
-    this.eventService.createEvent(formValue).subscribe({
-      next: (event:Event)=>{
-        console.log('event created', event)
-        this.router.navigate(['/events'])
-      },
-      error: (error:any) =>{
-        console.log(error.error)
-        this.errors=error.error
-      }
-     })
+    // const formValue=this.addEventForm.value
+    // console.log(formValue)
+    // this.eventService.createEvent(formValue).subscribe({
+    //   next: (event:Event)=>{
+    //     console.log('event created', event)
+    //     this.router.navigate(['/events'])
+    //   },
+    //   error: (error:any) =>{
+    //     console.log(error.error)
+    //     this.errors=error.error
+    //   }
+    //  })
    }
 
 
