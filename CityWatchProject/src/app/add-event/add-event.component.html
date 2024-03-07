@@ -9,6 +9,11 @@
         <span (click)="close()" class="close">&times;</span>
         <h1 class="text-center">Add an Event</h1>
         <div class="form-group">
+
+          <!-- @if(!addEventForm.valid && addEventForm.touched)
+          {
+            <span class="dangerBlock"> *Required Fields</span>
+          } -->
           <label for="title">Title</label>
           <input type="text" class="form-control" formControlName="title">
         </div>
@@ -22,7 +27,7 @@
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <textarea placeholder=" Tell us about the event" class="form-control" formControlName="content" rows="4" cols="28"></textarea>
+          <textarea placeholder=" Tell us about the event" formControlName="content" rows="4" cols="28"></textarea>
         </div>
         @if (isLoading) {
           <div style="text-align: center;">
@@ -30,9 +35,12 @@
           </div>
            }
 
-    @for(error of errors; track $index){
-      <p class="error">{{error}}</p>
-    }
+           <!-- @for(error of errors; track $index){
+             <p class="error">{{error}}</p>
+           } -->
+
+
+
     <button type="submit" [disabled]="!addEventForm.valid" >Add Event </button>
   </form>
 </div>

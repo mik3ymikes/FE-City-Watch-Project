@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { EventService } from '../core/services/event.service';
 import { Event } from '../shared/models/event';
 import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinner.component';
+import { NgIf } from '@angular/common';
 // import { Observable } from 'rxjs';
 
 
@@ -12,7 +13,7 @@ import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinn
 @Component({
   selector: 'app-add-event',
   standalone: true,
-  imports: [ReactiveFormsModule, LoadingSpinnerComponent],
+  imports: [ReactiveFormsModule, LoadingSpinnerComponent, NgIf],
   templateUrl: './add-event.component.html',
   styleUrl: './add-event.component.css'
 })
@@ -46,6 +47,7 @@ export class AddEventComponent {
       },
       error: (error:any) =>{
         console.log(error.error)
+        this.isError=true
         this.errors=error.error
         this.isLoading=false
       }
