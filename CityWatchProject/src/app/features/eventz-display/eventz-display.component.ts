@@ -48,7 +48,7 @@ ngOnInit(): void {
 }
 
 addEvent(){
-  this.router.navigate(['/addEvent']);
+  this.router.navigate(['/add-event']);
 }
 
 

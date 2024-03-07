@@ -22,7 +22,11 @@ export const routes: Routes = [
   {path: 'statistics', component:StatisticsComponent},
   {path: 'login', component:LoginComponent, canActivate: [noAuthGuard]},
   {path: 'signup', component:SignupComponent},
-  {path: 'addEvent', component:AddEventComponent, canActivate: [authGuard]},
+  {
+    path: 'add-event',
+    loadComponent: () => import('./add-event/add-event.component').then((c) =>
+    c.AddEventComponent), canActivate: [authGuard]
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
