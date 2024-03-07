@@ -10,19 +10,19 @@
         <h1 class="text-center">Add an Event</h1>
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" formControlName="title">
+          <input type="text" class="form-control" formControlName="title">
         </div>
         <div class="form-group">
           <label for="start_date_time"> Start Date</label>
-          <input type="datetime-local" formControlName="start_date_time">
+          <input type="datetime-local" class="form-control" formControlName="start_date_time">
         </div>
         <div class="form-group">
           <label for="end_date_time">End Date</label>
-          <input type="datetime-local" formControlName="end_date_time">
+          <input type="datetime-local" class="form-control" formControlName="end_date_time">
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <textarea placeholder=" Tell us about the event" formControlName="content" rows="4" cols="28"></textarea>
+          <textarea placeholder=" Tell us about the event" class="form-control" formControlName="content" rows="4" cols="28"></textarea>
         </div>
         @if (isLoading) {
           <div style="text-align: center;">
