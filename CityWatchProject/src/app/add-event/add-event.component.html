@@ -39,15 +39,15 @@
            <!-- @for(error of errors; track $index){
              <p class="error">{{error}}</p>
            } -->
-           @if (isError) {
-            <p class="error">Date ranges cannot be in the past</p>
-          }
 
 
-    <div>
-      <label for="cover_image">Cover Image</label>
-      <input type="file" (change)="onfileSelected($event)" id="cover-image">
-    </div>
+           <div>
+             <label for="cover_image">Cover Image</label>
+             <input type="file" (change)="onfileSelected($event)" id="cover-image">
+            </div>
+            @if (isError) {
+             <p class="error">Date ranges cannot be in the past</p>
+           }
     <button type="submit" [disabled]="!addEventForm.valid" >Add Event </button>
   </form>
 </div>
