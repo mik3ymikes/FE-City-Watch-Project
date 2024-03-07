@@ -24,15 +24,15 @@ export class AddEventComponent {
 
 
   addEventForm=new FormGroup({
-    title:new FormControl('', [Validators.required]),
+    content:new FormControl('', [Validators.required]),
     start_date_time:new FormControl('', [Validators.required]),
     end_date_time:new FormControl('', [Validators.required]),
-    content:new FormControl('', [Validators.required]),
+    title:new FormControl('', [Validators.required]),
 
   })
 
 
-  onAddEvent(){
+  onSubmit(){
     // const formValue=this.addEventForm.value
     // console.log(formValue)
     // this.eventService.createEvent(formValue).subscribe({
@@ -48,18 +48,12 @@ export class AddEventComponent {
    }
 
 
-  //  onAddEvent(){
-  //   const formValue=this.signupForm.value
-  //    this.authService.signup(formValue).subscribe({
-  //     next: (res:any)=>{
-  //       this.router.navigate(['/'])
-  //     },
-  //     error: (error:any) =>{
-  //       console.log(error.error)
-  //       this.errors=error.error
-  //     }
-  //    })
-  //  }
+
+
+
+
+
+
 
 
 
