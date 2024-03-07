@@ -17,15 +17,16 @@ export class EventService {
   }
 
 
+// couldnt get this below to work not sure why couldnt be type event??
+  // createEvent(): Observable <Event>{
+  //   return this.http.post<Event>(`${environment.apiUrl}/events`, {})
+  // }
 
-  createEvent(): Observable <Event>{
-    return this.http.post<Event>(`${environment.apiUrl}/events`, {})
+
+  createEvent(eventData: any): Observable<Event> {
+    return this.http.post<Event>(`${environment.apiUrl}/events`, eventData);
   }
 
-
-  // createEvent(event:Event){
-  //   return this.http.post(`${environment.apiUrl}/events`, event)
-  // }
 
 
 

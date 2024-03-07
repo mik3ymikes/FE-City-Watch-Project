@@ -4,6 +4,7 @@ import { AuthenticationService } from '../core/services/authentication.service';
 import { Router } from '@angular/router';
 import { EventService } from '../core/services/event.service';
 import { Event } from '../shared/models/event';
+// import { Observable } from 'rxjs';
 
 
 
@@ -33,19 +34,20 @@ export class AddEventComponent {
 
 
   onSubmit(){
+    // if(this.addEventForm.valid){
     const formValue=this.addEventForm.value
     console.log(formValue)
-    // this.eventService.createEvent(formValue).subscribe({
-    //   next: (event:Event)=>{
-    //     console.log('event created', event)
-    //     this.router.navigate(['/events'])
-    //   },
-    //   error: (error:any) =>{
-    //     console.log(error.error)
-    //     this.errors=error.error
-    //   }
-    //  })
-
+    this.eventService.createEvent(formValue).subscribe({
+      next: (event:Event)=>{
+        console.log('event created', event)
+        this.router.navigate(['/events'])
+      },
+      error: (error:any) =>{
+        console.log(error.error)
+        this.errors=error.error
+      }
+     })
+    // }
 
     // this.eventService.createEvent(formValue).subscribe({
     //   next: () =>{
