@@ -16,6 +16,7 @@
           } -->
           <label for="title">Title</label>
           <input type="text" class="form-control" formControlName="title">
+          
         </div>
         <div class="form-group">
           <label for="start_date_time"> Start Date</label>
@@ -39,7 +40,7 @@
              <p class="error">{{error}}</p>
            } -->
            @if (isError) {
-            <p class="error">Date ranges cannot be in the past or expired</p>
+            <p class="error">Date ranges cannot be in the past</p>
           }
 
 

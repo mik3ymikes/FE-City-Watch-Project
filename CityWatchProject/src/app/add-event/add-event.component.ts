@@ -27,10 +27,10 @@ export class AddEventComponent {
 
 
   addEventForm=new FormGroup({
-    content:new FormControl('', Validators.required),
+    content:new FormControl('', [Validators.required, Validators.maxLength(100)]),
     start_date_time:new FormControl('', Validators.required),
     end_date_time:new FormControl('', Validators.required),
-    title:new FormControl('', Validators.required),
+    title:new FormControl('', [Validators.required, Validators.maxLength(50)]),
 
   })
 
