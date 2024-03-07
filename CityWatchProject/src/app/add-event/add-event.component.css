@@ -99,7 +99,8 @@ button:hover{
 }
 
 button:disabled{
-  background-color: #000000;
+  /* background-color: #ff0303; */
+  cursor: not-allowed;
 }
 
 
