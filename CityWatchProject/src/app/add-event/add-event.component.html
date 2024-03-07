@@ -16,7 +16,7 @@
           } -->
           <label for="title">Title</label>
           <input type="text" class="form-control" formControlName="title">
-          
+
         </div>
         <div class="form-group">
           <label for="start_date_time"> Start Date</label>
@@ -44,6 +44,10 @@
           }
 
 
+    <div>
+      <label for="cover_image">Cover Image</label>
+      <input type="file" (change)="onfileSelected($event)" id="cover-image">
+    </div>
     <button type="submit" [disabled]="!addEventForm.valid" >Add Event </button>
   </form>
 </div>

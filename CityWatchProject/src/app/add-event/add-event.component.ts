@@ -22,7 +22,8 @@ export class AddEventComponent {
   isError:boolean=false
   errors:string[]=[]
   isLoading=false
-
+  selectedFile: File | null =null
+  
   constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
 
 
@@ -66,15 +67,16 @@ export class AddEventComponent {
    }
 
 
-
-
-
-
-
-
-
 close(){
   this.router.navigate(['/events']);
+}
+
+
+
+onfileSelected(event:any){
+  if(event.target.files && event.target.files[0]){
+   this.selectedFile=event.target.files[0]
+  }
 }
 
 
