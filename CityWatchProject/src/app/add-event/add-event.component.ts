@@ -33,8 +33,8 @@ export class AddEventComponent {
 
 
   onSubmit(){
-    // const formValue=this.addEventForm.value
-    // console.log(formValue)
+    const formValue=this.addEventForm.value
+    console.log(formValue)
     // this.eventService.createEvent(formValue).subscribe({
     //   next: (event:Event)=>{
     //     console.log('event created', event)
@@ -45,9 +45,18 @@ export class AddEventComponent {
     //     this.errors=error.error
     //   }
     //  })
+
+
+    // this.eventService.createEvent(formValue).subscribe({
+    //   next: () =>{
+    //      this.router.navigate(['/events'])
+    //   },
+    //   error: (error)=>{
+    //     console.log(error)
+    //   }
+    // })
+
    }
-
-
 
 
 

@@ -19,7 +19,7 @@ export class EventService {
 
 
   createEvent(): Observable <Event>{
-    return this.http.post<Event>(`${environment.apiUrl}/events`,{})
+    return this.http.post<Event>(`${environment.apiUrl}/events`, {})
   }
 
 
