@@ -24,6 +24,11 @@
           <label for="content">Content</label>
           <textarea placeholder=" Tell us about the event" formControlName="content" rows="4" cols="28"></textarea>
         </div>
+        @if (isLoading) {
+          <div style="text-align: center;">
+               <app-loading-spinner></app-loading-spinner>
+          </div>
+           }
 
     @for(error of errors; track $index){
       <p class="error">{{error}}</p>

@@ -4,6 +4,7 @@ import { AuthenticationService } from '../core/services/authentication.service';
 import { Router } from '@angular/router';
 import { EventService } from '../core/services/event.service';
 import { Event } from '../shared/models/event';
+import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinner.component';
 // import { Observable } from 'rxjs';
 
 
@@ -11,7 +12,7 @@ import { Event } from '../shared/models/event';
 @Component({
   selector: 'app-add-event',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, LoadingSpinnerComponent],
   templateUrl: './add-event.component.html',
   styleUrl: './add-event.component.css'
 })
@@ -19,7 +20,7 @@ export class AddEventComponent {
 
   isError:boolean=false
   errors:string[]=[]
-
+  isLoading=false
 
   constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
 
@@ -36,6 +37,7 @@ export class AddEventComponent {
   onSubmit(){
     // if(this.addEventForm.valid){
     const formValue=this.addEventForm.value
+    this.isLoading=true
     console.log(formValue)
     this.eventService.createEvent(formValue).subscribe({
       next: (event:Event)=>{
@@ -45,6 +47,7 @@ export class AddEventComponent {
       error: (error:any) =>{
         console.log(error.error)
         this.errors=error.error
+        this.isLoading=false
       }
      })
     // }
