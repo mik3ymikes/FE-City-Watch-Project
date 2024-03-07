@@ -4,7 +4,7 @@
   <img class="background-img img-fluid" src="https://images.unsplash.com/photo-1614607653708-0777e6d003b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D" alt="">
   <div class="modal">
 
-    <div class=" container container-fluid">
+    <div class=" container container-fluid" >
       <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()" class="form">
         <span (click)="close()" class="close">&times;</span>
         <h1 class="text-center">Add an Event</h1>
@@ -38,7 +38,9 @@
            <!-- @for(error of errors; track $index){
              <p class="error">{{error}}</p>
            } -->
-
+           @if (isError) {
+            <p class="error">Date ranges cannot be in the past or expired</p>
+          }
 
 
     <button type="submit" [disabled]="!addEventForm.valid" >Add Event </button>

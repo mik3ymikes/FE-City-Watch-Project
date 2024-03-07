@@ -127,14 +127,14 @@ button:disabled{
 .dangerBlock{
   position: absolute;
   color: red;
-  font-size: xx-small;
+  font-size: small;
   bottom: 5%;
   right: 5%;
 }
 
 
-input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
   border: 1px solid red;
-  font-size: xx-small;
+  /* font-size: xx-small; */
 
 }
