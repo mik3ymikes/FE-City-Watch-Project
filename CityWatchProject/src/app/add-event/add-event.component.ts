@@ -43,7 +43,7 @@ export class AddEventComponent {
       formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
       formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
       formData.append('title', this.addEventForm.get('title')!.value)
-      formData.append('cover_image', this.selectedFile, this.selectedFile.name);
+      formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
 
 
     // const formValue=this.addEventForm.value
