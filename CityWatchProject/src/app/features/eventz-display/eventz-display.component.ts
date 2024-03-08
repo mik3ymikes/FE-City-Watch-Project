@@ -38,7 +38,7 @@ ngOnInit(): void {
   this.eventService.getEvents().subscribe({
     next: (events:Event[])=>{
       this.events=events
-      console.log('get', this.events)
+      // console.log('get', this.events)
     },
     error: (error:any) =>{
       console.error("Error fetching timeline events", error)
