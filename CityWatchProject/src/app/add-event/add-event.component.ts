@@ -23,7 +23,7 @@ export class AddEventComponent {
   errors:string[]=[]
   isLoading=false
   selectedFile: File | null =null
-  
+
   constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
 
 
@@ -32,16 +32,24 @@ export class AddEventComponent {
     start_date_time:new FormControl('', Validators.required),
     end_date_time:new FormControl('', Validators.required),
     title:new FormControl('', [Validators.required, Validators.maxLength(50)]),
-
+    // cover_image: new FormControl(null), // Make it optional
   })
 
 
   onSubmit(){
-    // if(this.addEventForm.valid){
+    if (this.addEventForm.valid && this.selectedFile) {
+      const formData:any = new FormData();
+      formData.append('content', this.addEventForm.get('content')!.value!)
+      formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
+      formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
+      formData.append('title', this.addEventForm.get('title')!.value)
+      formData.append('cover_image', this.selectedFile, this.selectedFile.name)
+
+
     const formValue=this.addEventForm.value
     this.isLoading=true
     console.log(formValue)
-    this.eventService.createEvent(formValue).subscribe({
+    this.eventService.createEvent(formData).subscribe({
       next: (event:Event)=>{
         console.log('event created', event)
         this.router.navigate(['/events'])
@@ -53,7 +61,7 @@ export class AddEventComponent {
         this.isLoading=false
       }
      })
-    // }
+    }
 
     // this.eventService.createEvent(formValue).subscribe({
     //   next: () =>{

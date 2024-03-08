@@ -10,7 +10,7 @@ end_date_time:string;
 created_at:string;
 user:User;
 title:string;
-
+cover_image_url: string;
 
 constructor(event:any){
   this.id=event.id || 0;
@@ -20,5 +20,6 @@ constructor(event:any){
   this.created_at=event.created_at;
   this.user=event.user || new User({});
   this.title=event.title || "";
+  this.cover_image_url=event.cover_image_url
 }
 }
