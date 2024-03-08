@@ -22,7 +22,7 @@ export class AddEventComponent {
   isError:boolean=false
   errors:string[]=[]
   isLoading=false
-  selectedFile: File | null =null
+  selectedFile: File | null = null;
 
   constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
 
@@ -43,12 +43,12 @@ export class AddEventComponent {
       formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
       formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
       formData.append('title', this.addEventForm.get('title')!.value)
-      formData.append('cover_image', this.selectedFile, this.selectedFile.name)
+      formData.append('cover_image', this.selectedFile, this.selectedFile.name);
 
 
-    const formValue=this.addEventForm.value
+    // const formValue=this.addEventForm.value
     this.isLoading=true
-    console.log(formValue)
+    // console.log(formValue)
     this.eventService.createEvent(formData).subscribe({
       next: (event:Event)=>{
         console.log('event created', event)
@@ -81,9 +81,9 @@ close(){
 
 
 
-onfileSelected(event:any){
-  if(event.target.files && event.target.files[0]){
-   this.selectedFile=event.target.files[0]
+onFileSelected(event: any) {
+  if (event.target.files && event.target.files[0]) {
+    this.selectedFile = event.target.files[0];
   }
 }
 
