@@ -32,6 +32,9 @@ export class EventService {
   }
 
 
+  // createEvent(event:Event){
+  //   return this.http.post(`${environment.apiUrl}/events`, event);
+  // }
 
 
 

@@ -56,6 +56,7 @@ export class AddEventComponent {
       // console.log(formValue)
       this.eventService.createEvent(formData).subscribe({
       next: (event:Event)=>{
+        // next: ()=>{
         console.log('event created', event)
         this.router.navigate(['/events'])
       },
