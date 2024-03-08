@@ -5,7 +5,7 @@
   <div class="modal">
 
     <div class=" container container-fluid" >
-      <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()" class="form">
+      <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()" class="form" >
         <span (click)="close()" class="close">&times;</span>
         <h1 class="text-center">Add an Event</h1>
         <div class="form-group">
@@ -43,7 +43,7 @@
 
            <div>
             <label for="cover_image">Cover Image</label>
-            <input type="file" (change)="onFileSelected($event)" id="cover-image" formControlName="cover_image" />
+            <input type="file" (change)="onFileSelected($event)" id="cover-image"/>
           </div>
             @if (isError) {
              <p class="error">Date ranges cannot be in the past</p>

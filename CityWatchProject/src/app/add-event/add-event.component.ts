@@ -18,7 +18,6 @@ import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinn
   styleUrl: './add-event.component.css'
 })
 export class AddEventComponent {
-
   isError:boolean=false
   errors:string[]=[]
   isLoading=false
