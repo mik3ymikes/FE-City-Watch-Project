@@ -46,7 +46,7 @@ export class AddEventComponent {
       formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
       formData.append('title', this.addEventForm.get('title')!.value)
       formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
-
+      console.log(this.selectedFile)
       console.log('FormData:', formData)
 
 
