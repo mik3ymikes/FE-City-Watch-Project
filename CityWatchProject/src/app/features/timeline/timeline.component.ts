@@ -14,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TimelineComponent implements OnInit {
 
   alerts: Alert[]=[]
+  filteredAlerts: Alert[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 20;
 
@@ -29,7 +30,7 @@ ngOnInit(): void {
 this.alertService.getTimeLineAlerts().subscribe({
   next: (alerts:Alert[])=>{
     this.alerts=alerts
-
+    this.filteredAlerts = alerts;
   },
   error: (error:any) =>{
     console.error("Error fetching timeline posts", error)
@@ -73,13 +74,13 @@ totalPages(): number {
 
 // filterResults(text: string) {
 //   if (!text) {
-//     this.filteredEvents = this.events;
+//     this.filteredAlerts = this.alerts;
 //     return;
 //   }
 
-//   this.filteredEvents = this.events.filter(
-//     event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
-//     event?.content.toLowerCase().includes(text.toLowerCase())
+//   this.filteredAlerts = this.alerts.filter(
+//     alert => alert?.title.toLowerCase().includes(text.toLowerCase()) ||
+//     alert?.content.toLowerCase().includes(text.toLowerCase())
 //   );
 // }
 
