@@ -25,8 +25,6 @@ export class AddAlertComponent {
 
   addEventForm=new FormGroup({
     content:new FormControl('', [Validators.required, Validators.maxLength(100)]),
-    start_date_time:new FormControl('', Validators.required),
-    end_date_time:new FormControl('', Validators.required),
     title:new FormControl('', [Validators.required, Validators.maxLength(50)]),
     // cover_image: new FormControl(null), // Make it optional
     // cover_image: new FormControl('', Validators.required)
@@ -39,8 +37,8 @@ export class AddAlertComponent {
 
       const formData:any = new FormData();
       formData.append('content', this.addEventForm.get('content')!.value)
-      formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
-      formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
+      // formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
+      // formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
       formData.append('title', this.addEventForm.get('title')!.value)
       formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
       console.log(this.selectedFile)
@@ -53,8 +51,8 @@ export class AddAlertComponent {
         next: (event:Alert)=>{
         console.log('FormData:', formData)
         // next: ()=>{
-        console.log('event created', event)
-        this.router.navigate(['/events'])
+        console.log('alert created', alert)
+        this.router.navigate(['/alerts'])
       },
       error: (error:any) =>{
         console.log(error.error)
@@ -83,9 +81,9 @@ close(){
 
 
 
-onFileSelected(event: any) {
-  if (event.target.files && event.target.files[0]) {
-    this.selectedFile = event.target.files[0];
+onFileSelected(alert: any) {
+  if (alert.target.files && alert.target.files[0]) {
+    this.selectedFile = alert.target.files[0];
 
   }
 }
