@@ -40,7 +40,7 @@ export class AddAlertComponent {
       // formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
       // formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
       formData.append('title', this.addEventForm.get('title')!.value)
-      formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
+      // formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
       console.log(this.selectedFile)
 
 
@@ -81,12 +81,12 @@ close(){
 
 
 
-onFileSelected(alert: any) {
-  if (alert.target.files && alert.target.files[0]) {
-    this.selectedFile = alert.target.files[0];
+// onFileSelected(alert: any) {
+//   if (alert.target.files && alert.target.files[0]) {
+//     this.selectedFile = alert.target.files[0];
 
-  }
-}
+//   }
+// }
 
 
 
