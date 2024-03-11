@@ -15,7 +15,7 @@ export class TimelineComponent implements OnInit {
 
   alerts: Alert[]=[]
   currentPage: number = 1;
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 20;
 
   constructor(private alertService:AlertService,
     private router:Router, private route:ActivatedRoute){}

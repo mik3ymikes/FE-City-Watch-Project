@@ -1,4 +1,43 @@
-<div class="container">
+<div class="card mb-4 bg-dark text-white" style="width: 18rem ;">
+  <img [src]= "'https://source.unsplash.com/random?'+ alert.title"  class="card-img-top" alt="" style="max-height: 200px;">
+  <!-- <img [src]="alert.cover_image_url || 'https://source.unsplash.com/random?'+ alert.title"  class="card-img-top" alt="" style="max-height: 200px;"> -->
+  <div class="card-body">
+  <div class="card-body">
+    <h5 class="card-title">{{alert.title}}</h5>
+    <p class="card-text">{{alert.content}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <!-- <li class="list-group-item">Event Time- {{event.start_date_time | date}} - {{event.end_date_time | date}}</li> -->
+    <li class="list-group-item">Event Created at- {{alert.created_at | date}}</li>
+    <li class="list-group-item">Created by- {{alert.user}}</li>
+  </ul>
+  <div class="card-body d-flex justify-content-center gap-3">
+    <a class="card-link btn btn-secondary btn-sm">View Comments</a>
+    <a  class="card-lin btn btn-secondary btn-sm"> Add Comment</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="alert-header">
     <div class="alert-header-left">
       <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
@@ -12,4 +51,4 @@
 
 
   <div class="alert-content">{{alert.content}}</div>
-</div>
+</div> -->
