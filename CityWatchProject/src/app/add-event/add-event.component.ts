@@ -38,7 +38,7 @@ export class AddEventComponent {
 
   onSubmit(){
     console.log('FormGroup:', this.addEventForm.value);
-    // if (this.addEventForm.valid && this.selectedFile) {
+    if (this.addEventForm.valid && this.selectedFile) {
 
       const formData:any = new FormData();
       formData.append('content', this.addEventForm.get('content')!.value)
@@ -47,14 +47,14 @@ export class AddEventComponent {
       formData.append('title', this.addEventForm.get('title')!.value)
       formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
       console.log(this.selectedFile)
-      console.log('FormData:', formData)
 
 
       // const formValue=this.addEventForm.value
       this.isLoading=true
       // console.log(formValue)
       this.eventService.createEvent(formData).subscribe({
-      next: (event:Event)=>{
+        next: (event:Event)=>{
+        console.log('FormData:', formData)
         // next: ()=>{
         console.log('event created', event)
         this.router.navigate(['/events'])
@@ -66,7 +66,7 @@ export class AddEventComponent {
         this.isLoading=false
       }
      })
-    // }
+    }
 
     // this.eventService.createEvent(formValue).subscribe({
     //   next: () =>{
