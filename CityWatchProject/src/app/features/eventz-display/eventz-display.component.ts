@@ -17,6 +17,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
+filteredEvents: Event[] = [];
 currentPage: number = 1;
 itemsPerPage: number = 20;
 
@@ -28,16 +29,16 @@ constructor(private eventService:EventService,
 
 ngOnInit(): void {
 
-
   this.route.queryParams.subscribe(params=>{
-      this.currentPage=params['page'] ? Number(params['page']) :1
+    this.currentPage=params['page'] ? Number(params['page']) :1
 
 
-    })
+  })
 
   this.eventService.getEvents().subscribe({
     next: (events:Event[])=>{
       this.events=events
+      this.filteredEvents = events;
       // console.log('get', this.events)
     },
     error: (error:any) =>{
@@ -78,5 +79,17 @@ const totalPages = Math.ceil(totalItems / this.itemsPerPage);
 totalPages(): number {
   return this.pages().length;
 }
+
+filterResults(text: string) {
+  if (!text) {
+    this.filteredEvents = this.events;
+    return;
+  }
+
+  this.filteredEvents = this.events.filter(
+    event => event?.title.toLowerCase().includes(text.toLowerCase())
+  );
+}
+
 }
 
