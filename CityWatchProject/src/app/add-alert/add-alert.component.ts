@@ -33,7 +33,7 @@ export class AddAlertComponent {
 
   onSubmit(){
     console.log('FormGroup:', this.addEventForm.value);
-    if (this.addEventForm.valid && this.selectedFile) {
+    // if (this.addEventForm.valid && this.selectedFile) {
 
       const formData:any = new FormData();
       formData.append('content', this.addEventForm.get('content')!.value)
@@ -41,7 +41,7 @@ export class AddAlertComponent {
       // formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
       formData.append('title', this.addEventForm.get('title')!.value)
       // formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
-      console.log(this.selectedFile)
+      // console.log(this.selectedFile)
 
 
       // const formValue=this.addEventForm.value
@@ -61,7 +61,7 @@ export class AddAlertComponent {
         this.isLoading=false
       }
      })
-    }
+    // }
 
     // this.eventService.createEvent(formValue).subscribe({
     //   next: () =>{
