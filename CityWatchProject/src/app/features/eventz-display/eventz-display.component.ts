@@ -87,7 +87,8 @@ filterResults(text: string) {
   }
 
   this.filteredEvents = this.events.filter(
-    event => event?.title.toLowerCase().includes(text.toLowerCase())
+    event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
+    event?.content.toLowerCase().includes(text.toLowerCase())
   );
 }
 

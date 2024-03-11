@@ -18,6 +18,7 @@
   <div class="row justify-content-center" >
 
   @for(event of paginatedItems; track event.id){
+    <!-- @for (event of filteredEvents; track event.title) {} -->
     <div class="col-auto ">
         <app-eventz [event]="event"/>
       </div>
