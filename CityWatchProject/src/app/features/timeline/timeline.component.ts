@@ -40,7 +40,7 @@ this.alertService.getTimeLineAlerts().subscribe({
 
 
 addAlert(){
-  // this.router.navigate(['/add-event']);
+  this.router.navigate(['/add-alert']);
 }
 
 

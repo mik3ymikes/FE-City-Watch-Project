@@ -27,6 +27,11 @@ export const routes: Routes = [
     loadComponent: () => import('./add-event/add-event.component').then((c) =>
     c.AddEventComponent), canActivate: [authGuard]
   },
+  {
+  path: 'add-alert',
+  loadComponent: () => import('./add-alert/add-alert.component').then((c) =>
+  c.AddAlertComponent), canActivate: [authGuard]
+ },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
