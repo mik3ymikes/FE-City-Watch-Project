@@ -1,4 +1,62 @@
-.container{
+.row{
+  margin-top: 1%;
+}
+
+
+
+
+.pagination{
+  margin-top: 1%;
+}
+
+
+.con{
+  width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container{
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -21,8 +79,4 @@
   align-items: center;
   justify-content: center;
 }
-
-
-.pagination{
-  margin-top: 1%;
-}
+ */

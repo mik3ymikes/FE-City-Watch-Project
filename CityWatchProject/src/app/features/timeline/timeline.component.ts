@@ -37,6 +37,13 @@ this.alertService.getTimeLineAlerts().subscribe({
 })
 }
 
+
+addAlert(){
+  // this.router.navigate(['/add-event']);
+}
+
+
+
 get paginatedItems() {
   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
   const endIndex = startIndex + this.itemsPerPage;
@@ -61,6 +68,21 @@ const totalPages = Math.ceil(totalItems / this.itemsPerPage);
 totalPages(): number {
   return this.pages().length;
 }
+
+
+
+// filterResults(text: string) {
+//   if (!text) {
+//     this.filteredEvents = this.events;
+//     return;
+//   }
+
+//   this.filteredEvents = this.events.filter(
+//     event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
+//     event?.content.toLowerCase().includes(text.toLowerCase())
+//   );
+// }
+
 }
 
 
