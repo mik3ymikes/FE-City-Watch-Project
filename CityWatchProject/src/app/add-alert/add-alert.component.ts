@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from '../core/services/authentication.service';
 import { Router } from '@angular/router';
-import { EventService } from '../core/services/event.service';
-import { Event } from '../shared/models/event';
+import { AlertService } from '../core/services/alert.service';
+import { Alert } from '../shared/models/alert';
 import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinner.component';
 
 
@@ -20,7 +20,7 @@ export class AddAlertComponent {
   isLoading=false
   selectedFile: File | null = null;
 
-  constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
+  constructor(private authService:AuthenticationService, private router:Router, private alertService:AlertService){}
 
 
   addEventForm=new FormGroup({
@@ -49,8 +49,8 @@ export class AddAlertComponent {
       // const formValue=this.addEventForm.value
       this.isLoading=true
       // console.log(formValue)
-      this.eventService.createEvent(formData).subscribe({
-        next: (event:Event)=>{
+      this.alertService.createAlert(formData).subscribe({
+        next: (event:Alert)=>{
         console.log('FormData:', formData)
         // next: ()=>{
         console.log('event created', event)
@@ -78,7 +78,7 @@ export class AddAlertComponent {
 
 
 close(){
-  this.router.navigate(['/events']);
+  this.router.navigate(['/alerts']);
 }
 
 
