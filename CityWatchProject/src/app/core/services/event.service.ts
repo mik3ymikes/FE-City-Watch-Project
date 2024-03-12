@@ -12,14 +12,14 @@ export class EventService {
   constructor(private http:HttpClient) { }
 
 
-  getEvents(): Observable <Event[]>{
-    return this.http.get<Event[]>(`${environment.apiUrl}/events`)
-  }
-
-
-  // getEvents(page:number): Observable <Event[]>{
-  //   return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
+  // getEvents(): Observable <Event[]>{
+  //   return this.http.get<Event[]>(`${environment.apiUrl}/events`)
   // }
+
+
+  getEvents(page:number): Observable <Event[]>{
+    return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
+  }
 
 
 

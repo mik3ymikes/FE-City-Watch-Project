@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 
-
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
@@ -19,7 +18,7 @@ export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
 filteredEvents: Event[] = [];
 currentPage: number = 1;
-// totalPages:number=0;
+totalPages:number=0;
 itemsPerPage: number = 20;
 
 
@@ -28,26 +27,14 @@ constructor(private eventService:EventService,
 
 ngOnInit(): void {
 
- this.route.queryParams.subscribe(params=>{
-    this.currentPage=params['page'] ? Number(params['page']) :1
 
-    // this.route.queryParams.subscribe(params=>{
-    //   const page=params['page'] ? Number(params['page']) :1
-    //   this.loadEvents(page)
+  this.route.queryParams.subscribe(params=>{
+      const page=params['page'] ? Number(params['page']) :1
+      this.loadEvents(page)
 
 
-  })
+    })
 
-  this.eventService.getEvents().subscribe({
-    next: (events:Event[])=>{
-      this.events=events
-      this.filteredEvents = events;
-      // console.log('get', this.events)
-    },
-    error: (error:any) =>{
-      console.error("Error fetching timeline events", error)
-    }
-  })
 
 
 }
@@ -55,10 +42,6 @@ ngOnInit(): void {
 addEvent(){
   this.router.navigate(['/add-event']);
 }
-
-
-
-
 
 
 
@@ -76,68 +59,98 @@ onPageChange(pageNumber: number) {
     relativeTo:this.route,
     queryParams: {page:this.currentPage},
     queryParamsHandling: 'merge'
-}) }
+  }) }
 
-pages(): number[] {
-  const totalItems = this.events.length;
-const totalPages = Math.ceil(totalItems / this.itemsPerPage);
-  const pagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
-  return pagesArray;
-}
 
-totalPages(): number {
-  return this.pages().length;
-}
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredEvents = this.events;
+      return;
+    }
 
-filterResults(text: string) {
-  if (!text) {
-    this.filteredEvents = this.events;
-    return;
-  }
-
-  this.filteredEvents = this.events.filter(
-    event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
-    event?.content.toLowerCase().includes(text.toLowerCase())
+    this.filteredEvents = this.events.filter(
+      event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
+      event?.content.toLowerCase().includes(text.toLowerCase())
     );
   }
 
 
 
 
-  // loadEvents(page:number){
-  //   this.eventService.getEvents(page).subscribe({
-  //     next: (response:any) =>{
-  //       this.events=response.events;
-  //       this.currentPage=response.current_page;
-  //       this.totalPages=response.total_pages;
-  //       console.log(this.events, this.currentPage, this.totalPages)
-  //     },
-  //     error: (error:any) =>{
-  //       console.error("errror fetching events", error)
-  //     }
-  //   })
-  // }
+  loadEvents(page:number){
+    this.eventService.getEvents(page).subscribe({
+      next: (response:any) =>{
+        this.events=response.events;
+        this.currentPage=response.current_page;
+        this.totalPages=response.total_pages;
+        console.log(this.events, this.currentPage, this.totalPages)
+      },
+      error: (error:any) =>{
+        console.error("errror fetching events", error)
+      }
+    })
+  }
 
 
 
-  // nextPage(){
-  //   if(this.currentPage<this.totalPages){
-  //     this.router.navigate([], {
-  //       relativeTo:this.route,
-  //       queryParams: {page:this.currentPage +1},
-  //       queryParamsHandling: 'merge'
-  //     })
-  //   }
-  // }
+  nextPage(){
+    if(this.currentPage<this.totalPages){
+      this.router.navigate([], {
+        relativeTo:this.route,
+        queryParams: {page:this.currentPage +1},
+        queryParamsHandling: 'merge'
+      })
+    }
+  }
 
-  // previousPage(){
-  //   if(this.currentPage>1){
-  //     this.router.navigate([], {
-  //       relativeTo:this.route,
-  //       queryParams: {page:this.currentPage -1},
-  //       queryParamsHandling: 'merge'
-  //     })
-  //   }
-  // }
+  previousPage(){
+    if(this.currentPage>1){
+      this.router.navigate([], {
+        relativeTo:this.route,
+        queryParams: {page:this.currentPage -1},
+        queryParamsHandling: 'merge'
+      })
+    }
+  }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  this.route.queryParams.subscribe(params=>{
+  //     this.currentPage=params['page'] ? Number(params['page']) :1
+
+
+
+  // this.eventService.getEvents().subscribe({
+    //   next: (events:Event[])=>{
+      //     this.events=events
+      //     this.filteredEvents = events;
+  //     // console.log('get', this.events)
+  //   },
+  //   error: (error:any) =>{
+    //     console.error("Error fetching timeline events", error)
+    //   }
+    // })
+    // pages(): number[] {
+      //   const totalItems = this.events.length;
+      // const totalPages = Math.ceil(totalItems / this.itemsPerPage);
+      //   const pagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
+      //   return pagesArray;
+      // }
+
+    // totalPages(): number {
+    //   return this.pages().length;
+    // }
