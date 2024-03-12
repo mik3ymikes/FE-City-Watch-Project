@@ -14,3 +14,8 @@
   width: 90%;
 }
 
+
+button:disabled{
+  /* background-color: #ff0303; */
+  cursor: not-allowed;
+}

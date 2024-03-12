@@ -17,7 +17,7 @@ import { NgFor } from '@angular/common';
 })
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
-totalPagesArray: number[] = [];
+// totalPagesArray: number[] = [];
 filteredEvents: Event[] = [];
 currentPage: number = 1;
 totalPages:number=0;
