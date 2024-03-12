@@ -4,18 +4,20 @@ import { EventzComponent } from '../../shared/components/eventz/eventz.component
 import { EventService } from '../../core/services/event.service';
 // import { PaginationComponent } from '../../pagination/pagination.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgFor } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
-  imports: [EventzComponent],
+  imports: [EventzComponent, NgFor],
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
+totalPagesArray: number[] = [];
 filteredEvents: Event[] = [];
 currentPage: number = 1;
 totalPages:number=0;
@@ -47,11 +49,11 @@ addEvent(){
 
 
 
-get paginatedItems() {
-  const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-  const endIndex = startIndex + this.itemsPerPage;
-  return this.events.slice(startIndex, endIndex);
-}
+// get paginatedItems() {
+//   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+//   const endIndex = startIndex + this.itemsPerPage;
+//   return this.events.slice(startIndex, endIndex);
+// }
 
 onPageChange(pageNumber: number) {
   this.currentPage = pageNumber;
@@ -83,7 +85,7 @@ onPageChange(pageNumber: number) {
         this.events=response.events;
         this.currentPage=response.current_page;
         this.totalPages=response.total_pages;
-        console.log(this.events, this.currentPage, this.totalPages)
+        // this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
       },
       error: (error:any) =>{
         console.error("errror fetching events", error)

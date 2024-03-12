@@ -27,19 +27,17 @@
 
 
 
-    <div class="pagination-controls">
-    <button (click)="previousPage()" [disabled]="currentPage===1">Previous</button>
-    <button (click)="nextPage()" [disabled]="currentPage===totalPages || totalPages === 0">Next</button>
+    <div class="pagination-controls d-flex gap-2 ">
+    <button class="btn btn-dark" (click)="previousPage()" [disabled]="currentPage===1">Previous</button>
+    <button class="btn btn-dark" (click)="nextPage()" [disabled]="currentPage===totalPages || totalPages === 0">Next</button>
   </div>
 
-</div>
-</div>
 
-
-
-
-
-
+  <!-- <div class="pagination-controls">
+    <ng-container *ngFor="let page of totalPagesArray; let i = index">
+      <button (click)="onPageChange(i + 1)" [disabled]="currentPage === i + 1">{{ i + 1 }}</button>
+    </ng-container>
+  </div> -->
 
 
 
@@ -82,12 +80,12 @@
       <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
     </li>
   } -->
-
-
   <!-- <li class="page-item" [class.disabled]="currentPage === totalPages()">
     <a class="page-link" (click)="onPageChange(currentPage + 1)" aria-label="Next">
       <span aria-hidden="true">&raquo;</span>
     </a>
   </li>
+
+
 </ul>
 </nav> -->
