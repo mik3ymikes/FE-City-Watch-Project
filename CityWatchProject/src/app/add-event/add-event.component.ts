@@ -47,7 +47,8 @@ export class AddEventComponent {
       formData.append('title', this.addEventForm.get('title')!.value!)
       formData.append('cover_image', this.selectedFile, this.selectedFile.name);
       console.log(this.selectedFile)
-debugger
+  
+
 
       // const formValue=this.addEventForm.value
       this.isLoading=true

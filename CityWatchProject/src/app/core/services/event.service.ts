@@ -32,6 +32,7 @@ export class EventService {
   // }
 
   createEvent(formData: FormData): Observable<Event> {
+   
     return this.http.post<Event>(`${environment.apiUrl}/events`, formData);
   }
 
