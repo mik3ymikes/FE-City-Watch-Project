@@ -17,9 +17,14 @@ export class EventService {
   }
 
 
-  // getEvents(){
-  //   return this.http.get(`${environment.apiUrl}/events`)
+  // getEvents(page:number): Observable <Event[]>{
+  //   return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
   // }
+
+
+
+
+
 
 // couldnt get this below to work not sure why couldnt be type event??
   // createEvent(): Observable <Event>{
@@ -32,7 +37,7 @@ export class EventService {
   // }
 
   createEvent(formData: FormData): Observable<Event> {
-   
+
     return this.http.post<Event>(`${environment.apiUrl}/events`, formData);
   }
 
