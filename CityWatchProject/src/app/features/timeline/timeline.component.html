@@ -18,6 +18,66 @@
 <div class="container main-con">
   <div class="row justify-content-center" >
 
+
+    <div class="container main-con">
+      <div class="row justify-content-center" >
+
+      @for(alert of alerts; track alert.id){
+        <!-- @for (events of filteredEvents; track alert.title) {} -->
+        <!-- @for (filteredEvents of events; track filteredEvents.title) {} -->
+        <div class="col-auto">
+          <app-alert [alert]="alert"/>
+          </div>
+        }
+
+
+
+        <div class="pagination-controls d-flex gap-2 ">
+        <button class="btn btn-dark" (click)="previousPage()" [disabled]="currentPage===1">Previous</button>
+        <button class="btn btn-dark" (click)="nextPage()" [disabled]="currentPage===totalPages || totalPages === 0">Next</button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
     @for(alert of paginatedItems; track alert.id){
       <div class="col-auto ">
       <app-alert [alert]="alert"/>
@@ -50,7 +110,7 @@
     </li>
   </ul>
 </nav>
-</div>
+</div> -->
 
 
 

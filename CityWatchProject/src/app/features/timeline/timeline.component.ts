@@ -16,40 +16,30 @@ export class TimelineComponent implements OnInit {
   alerts: Alert[]=[]
   filteredAlerts: Alert[] = [];
   currentPage: number = 1;
+  totalPages:number=0;
   itemsPerPage: number = 20;
 
   constructor(private alertService:AlertService,
     private router:Router, private route:ActivatedRoute){}
 
-ngOnInit(): void {
-  this.route.queryParams.subscribe(params=>{
-    this.currentPage=params['page'] ? Number(params['page']) :1
-  })
+    ngOnInit(): void {
+
+      this.route.queryParams.subscribe(params=>{
+        const page=params['page'] ? Number(params['page']) :1
+        this.loadAlerts(page)
 
 
-this.alertService.getTimeLineAlerts().subscribe({
-  next: (alerts:Alert[])=>{
-    this.alerts=alerts
-    this.filteredAlerts = alerts;
-  },
-  error: (error:any) =>{
-    console.error("Error fetching timeline posts", error)
-  }
-})
-}
+      })
+    }
 
 
-addAlert(){
+
+
+  addAlert(){
   this.router.navigate(['/add-alert']);
 }
 
 
-
-get paginatedItems() {
-  const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-  const endIndex = startIndex + this.itemsPerPage;
-  return this.alerts.slice(startIndex, endIndex);
-}
 
 onPageChange(pageNumber: number) {
   this.currentPage = pageNumber;
@@ -57,24 +47,58 @@ onPageChange(pageNumber: number) {
     relativeTo:this.route,
     queryParams: {page:this.currentPage},
     queryParamsHandling: 'merge'
-}) }
+  }) }
 
-pages(): number[] {
-  const totalItems = this.alerts.length;
-const totalPages = Math.ceil(totalItems / this.itemsPerPage);
-  const pagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
-  return pagesArray;
+
+
+
+  loadAlerts(page:number){
+    this.alertService.getAlerts(page).subscribe({
+      next: (response:any) =>{
+        this.alerts=response.alerts;
+        this.currentPage=response.current_page;
+        this.totalPages=response.total_pages;
+        // this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+      },
+      error: (error:any) =>{
+        console.error("errror fetching alerts", error)
+      }
+    })
+  }
+
+
+
+  nextPage(){
+    if(this.currentPage<this.totalPages){
+      this.router.navigate([], {
+        relativeTo:this.route,
+        queryParams: {page:this.currentPage +1},
+        queryParamsHandling: 'merge'
+      })
+    }
+  }
+
+  previousPage(){
+    if(this.currentPage>1){
+      this.router.navigate([], {
+        relativeTo:this.route,
+        queryParams: {page:this.currentPage -1},
+        queryParamsHandling: 'merge'
+      })
+    }
+  }
+
+
 }
 
-totalPages(): number {
-  return this.pages().length;
-}
+
+
 
 
 
 // filterResults(text: string) {
-//   if (!text) {
-//     this.filteredAlerts = this.alerts;
+  //   if (!text) {
+    //     this.filteredAlerts = this.alerts;
 //     return;
 //   }
 
@@ -84,8 +108,74 @@ totalPages(): number {
 //   );
 // }
 
-}
+
+
+// this.alertService.getTimeLineAlerts().subscribe({
+//   next: (alerts:Alert[])=>{
+//     this.alerts=alerts
+//     this.filteredAlerts = alerts;
+//   },
+//   error: (error:any) =>{
+//     console.error("Error fetching timeline posts", error)
+//   }
+// })
+// }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// get paginatedItems() {
+//   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+//   const endIndex = startIndex + this.itemsPerPage;
+//   return this.alerts.slice(startIndex, endIndex);
+// }
+
+// onPageChange(pageNumber: number) {
+//   this.currentPage = pageNumber;
+//   this.router.navigate([], {
+//     relativeTo:this.route,
+//     queryParams: {page:this.currentPage},
+//     queryParamsHandling: 'merge'
+// }) }
+
+// pages(): number[] {
+//   const totalItems = this.alerts.length;
+// const totalPages = Math.ceil(totalItems / this.itemsPerPage);
+//   const pagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
+//   return pagesArray;
+// }
+
+// totalPages(): number {
+//   return this.pages().length;
+// }
