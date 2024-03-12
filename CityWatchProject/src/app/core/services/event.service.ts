@@ -27,9 +27,14 @@ export class EventService {
   // }
 
 
-  createEvent(eventData: any): Observable<Event> {
-    return this.http.post<Event>(`${environment.apiUrl}/events`, eventData);
+  // createEvent(eventData: any): Observable<Event> {
+  //   return this.http.post<Event>(`${environment.apiUrl}/events`, eventData);
+  // }
+
+  createEvent(formData: FormData): Observable<Event> {
+    return this.http.post<Event>(`${environment.apiUrl}/events`, formData);
   }
+
 
 
   // createEvent(event:Event){

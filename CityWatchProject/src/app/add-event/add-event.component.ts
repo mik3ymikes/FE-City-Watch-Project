@@ -40,14 +40,14 @@ export class AddEventComponent {
     console.log('FormGroup:', this.addEventForm.value);
     if (this.addEventForm.valid && this.selectedFile) {
 
-      const formData:any = new FormData();
-      formData.append('content', this.addEventForm.get('content')!.value)
-      formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
-      formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
-      formData.append('title', this.addEventForm.get('title')!.value)
-      formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
+      const formData = new FormData();
+      formData.append('content', this.addEventForm.get('content')!.value!)
+      formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value!)
+      formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value!)
+      formData.append('title', this.addEventForm.get('title')!.value!)
+      formData.append('cover_image', this.selectedFile, this.selectedFile.name);
       console.log(this.selectedFile)
-
+debugger
 
       // const formValue=this.addEventForm.value
       this.isLoading=true
