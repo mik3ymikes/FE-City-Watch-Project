@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Event } from '../../models/event';
 import { DatePipe } from '@angular/common';
-// import { User } from '../../models/user';
+import { User } from '../../models/user';
+import { UserService } from '../../../core/services/user.service';
 
 
 @Component({
@@ -14,7 +15,20 @@ import { DatePipe } from '@angular/common';
 
 
 
-export class EventzComponent {
+export class EventzComponent implements OnInit {
+  // currentUser: User | null = new User ({})
+  // constructor(private userService: UserService){}
+
+
+
+ngOnInit(): void {
+  // currentUser: User | null = new User ({})
+
+
+}
+
+
+
 
   // may have to check this
   @Input({required:true}) event:Event= new Event( )
