@@ -7,3 +7,15 @@
 
 
 
+.checkbox{
+  margin-left: 3%;
+}
+
+.label{
+  margin-left: 2%;
+  font-weight: 500;
+}
+/*
+.label:checked{
+  color: ;
+} */
