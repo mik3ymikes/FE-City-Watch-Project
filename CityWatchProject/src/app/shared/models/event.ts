@@ -8,9 +8,10 @@ content: string = '';
 start_date_time: string = '';
 end_date_time: string = '';
 created_at: string = '';
+has_joined: boolean=false;
+participants: User[]=[]
 title: string = '';
 cover_image_url: string = '';
-// cover_image_url: string
 user?:User;
 
 // constructor(event:any){
