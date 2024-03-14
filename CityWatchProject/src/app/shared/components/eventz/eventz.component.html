@@ -12,8 +12,10 @@
     <li class="list-group-item"> <strong>Created at - </strong> {{event.created_at | date}}</li>
     <li class="list-group-item"> <strong>Created by - </strong> {{event.user?.username}}</li>
     <li class="list-group-item"> <strong>Join Event - </strong>
+      <!-- @if(event.creator.id !== currentUser?.id){ -->
       <input  class="checkbox" type="checkbox" name="attending" id="attending">
       <label class="label" for="label">Attending</label>
+    <!-- } -->
     </li>
 
   </ul>

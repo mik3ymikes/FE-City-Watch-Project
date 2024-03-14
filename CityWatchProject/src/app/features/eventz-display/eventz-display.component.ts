@@ -5,6 +5,9 @@ import { EventService } from '../../core/services/event.service';
 // import { PaginationComponent } from '../../pagination/pagination.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgFor } from '@angular/common';
+// import { User } from '../../shared/models/user';
+// import { UserService } from '../../core/services/user.service';
+
 
 
 
@@ -15,8 +18,12 @@ import { NgFor } from '@angular/common';
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })
+
+
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
+// currentUser: User | null = new User ({})
+// hasJoined: boolean = false
 // totalPagesArray: number[] = [];
 filteredEvents: Event[] = [];
 currentPage: number = 1;
@@ -25,7 +32,10 @@ itemsPerPage: number = 20;
 
 
 constructor(private eventService:EventService,
-  private router:Router, private route:ActivatedRoute){}
+  private router:Router, private route:ActivatedRoute,
+  // private userService:UserService
+  )
+  {}
 
 ngOnInit(): void {
 
