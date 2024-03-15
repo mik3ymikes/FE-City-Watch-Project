@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { User } from '../../models/user';
 import { UserService } from '../../../core/services/user.service';
 import {FormsModule } from '@angular/forms';
+import { EventService } from '../../../core/services/event.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ import {FormsModule } from '@angular/forms';
 export class EventzComponent implements OnInit {
   toggleAttending:boolean=false
   currentUser: User | null = new User ({})
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private eventService:EventService){}
 
 
   ngOnInit(): void {
@@ -27,14 +28,26 @@ export class EventzComponent implements OnInit {
       // note that this may need to be CurrentUserSubject and not behavior
       this.currentUser=this.userService.currentUserBehaviorSubject.value
     })
-    
+
 
   }
 
+  toggleJoinEvent(){}
 
-  toggleJoinEvent(){
-    console.log(this.toggleAttending)
-  }
+
+
+  //   toggleJoinEvent(){
+  //     const eventJoin$=this.hasJoined ? this.eventService.leaveEvent(this.event.id) :
+  //     eventJoin$.subscribe({
+  //         next: ()=>{
+  //             this.hasJoined=!this.hasJoined
+  //   },
+  //   error: (error) =>{
+  //     console.log(error)
+  //   }
+  // })
+  // }
+
 
 
   // toggleJoinEvent(){
