@@ -19,6 +19,7 @@ import { EventService } from '../../../core/services/event.service';
 
 export class EventzComponent implements OnInit {
   toggleAttending:boolean=false
+  hasJoined: boolean =false
   currentUser: User | null = new User ({})
   constructor(private userService: UserService, private eventService:EventService){}
 
