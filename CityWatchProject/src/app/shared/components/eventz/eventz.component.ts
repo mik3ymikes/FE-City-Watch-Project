@@ -3,12 +3,13 @@ import { Event } from '../../models/event';
 import { DatePipe } from '@angular/common';
 import { User } from '../../models/user';
 import { UserService } from '../../../core/services/user.service';
+import {FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-eventz',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, FormsModule],
   templateUrl: './eventz.component.html',
   styleUrl: './eventz.component.css'
 })
@@ -16,23 +17,68 @@ import { UserService } from '../../../core/services/user.service';
 
 
 export class EventzComponent implements OnInit {
+  toggleAttending:boolean=false
   currentUser: User | null = new User ({})
   constructor(private userService: UserService){}
 
 
-
-ngOnInit(): void {
-this.userService.currentUserBehaviorSubject.subscribe(()=>{
-  // note that this may need to be CurrentUserSubject and not behavior
+  ngOnInit(): void {
+    this.userService.currentUserBehaviorSubject.subscribe(()=>{
+      // note that this may need to be CurrentUserSubject and not behavior
       this.currentUser=this.userService.currentUserBehaviorSubject.value
     })
+    
+
+  }
+
+
+  toggleJoinEvent(){
+    console.log(this.toggleAttending)
+  }
+
+
+  // toggleJoinEvent(){
+    //   const eventJoin$=this.hasJoined ? this.eventService.leaveEvent(this.event.id) :
+    //   eventJoin$.subscribe({
+      //     next: ()=>{
+        //       this.hasJoined=!this.hasJoined
+
+        //       // prepare guests
+        //       // if(this.currentUser){
+          //       //   if(this.hasJoined){
+            //       //     this.event.participants.push(this.currentUser)
+//       //   } else{
+//       //     this.event.participants = this.event.participants. filter((p) =>
+//       //     p.id !== this.currentUser?.id)
+//       //   }
+//       //   this.prepareGuests()
+//       // }
+//     },
+//     error: (error) =>{
+//       console.log(error)
+//     }
+//   })
+//   }
+
+
+
+
+
+
+// may have to check this
+@Input({required:true}) event:Event= new Event( )
+
+
+
+
+
 
 }
 
 
 
 
-  // may have to check this
-  @Input({required:true}) event:Event= new Event( )
-}
+
+
+
 
