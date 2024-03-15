@@ -25,6 +25,18 @@ export class EventzComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // this.eventService.getEvent('id').subscribe({
+    //   next: (event:Event)=>{
+    //       this.event=event
+    //       // this.hasJoined=event.has_joined
+    //       console.log(this.event)
+    //       // prepare guests
+    //       // this.prepareGuests()
+    //   },
+    //   error:(error)=>{
+    //     console.log(error)
+    //   }
+    // })
     this.userService.currentUserBehaviorSubject.subscribe(()=>{
       // note that this may need to be CurrentUserSubject and not behavior
       this.currentUser=this.userService.currentUserBehaviorSubject.value
@@ -34,6 +46,8 @@ export class EventzComponent implements OnInit {
   }
 
   toggleJoinEvent(){}
+
+
 
 
 
