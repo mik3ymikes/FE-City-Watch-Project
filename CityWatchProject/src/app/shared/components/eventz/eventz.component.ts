@@ -23,6 +23,7 @@ export class EventzComponent implements OnInit {
 
 ngOnInit(): void {
 this.userService.currentUserBehaviorSubject.subscribe(()=>{
+  // note that this may need to be CurrentUserSubject and not behavior
       this.currentUser=this.userService.currentUserBehaviorSubject.value
     })
 
