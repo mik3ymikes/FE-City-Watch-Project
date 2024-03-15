@@ -3,10 +3,9 @@ import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
 // import { PaginationComponent } from '../../pagination/pagination.component';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgFor } from '@angular/common';
-// import { User } from '../../shared/models/user';
+import { ActivatedRoute, Router } from '@angular/router';;
 // import { UserService } from '../../core/services/user.service';
+// import { User } from '../../shared/models/user';
 
 
 
@@ -14,7 +13,7 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
-  imports: [EventzComponent, NgFor],
+  imports: [EventzComponent],
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })

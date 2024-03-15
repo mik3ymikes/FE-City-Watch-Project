@@ -11,12 +11,12 @@
     <li class="list-group-item"> <strong>Event Time - </strong> {{event.start_date_time | date}} - {{event.end_date_time | date}}</li>
     <li class="list-group-item"> <strong>Created at - </strong> {{event.created_at | date}}</li>
     <li class="list-group-item"> <strong>Created by - </strong> {{event.user?.username}}</li>
-    <!-- @if(event.creator.id !== currentUser?.id){ -->
+    @if(event.user?.id !== currentUser?.id){
     <li class="list-group-item"> <strong>Join Event - </strong>
       <input  class="checkbox" type="checkbox" name="attending" id="attending">
       <label class="label" for="label">Attending</label>
-    <!-- } -->
     </li>
+  }
 
   </ul>
   <div class="card-body d-flex justify-content-center gap-3">

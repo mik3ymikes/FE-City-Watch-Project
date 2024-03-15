@@ -16,14 +16,15 @@ import { UserService } from '../../../core/services/user.service';
 
 
 export class EventzComponent implements OnInit {
-  // currentUser: User | null = new User ({})
-  // constructor(private userService: UserService){}
+  currentUser: User | null = new User ({})
+  constructor(private userService: UserService){}
 
 
 
 ngOnInit(): void {
-  // currentUser: User | null = new User ({})
-
+this.userService.currentUserBehaviorSubject.subscribe(()=>{
+      this.currentUser=this.userService.currentUserBehaviorSubject.value
+    })
 
 }
 
