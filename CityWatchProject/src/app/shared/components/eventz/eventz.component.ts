@@ -18,6 +18,7 @@ import { EventService } from '../../../core/services/event.service';
 
 
 export class EventzComponent implements OnInit {
+  // @Input() eventId: string | number = '';
   toggleAttending:boolean=false
   hasJoined: boolean =false
   currentUser: User | null = new User ({})
@@ -37,22 +38,41 @@ export class EventzComponent implements OnInit {
     //     console.log(error)
     //   }
     // })
+    // this.hasJoined = this.event.has_joined
     this.userService.currentUserBehaviorSubject.subscribe(()=>{
       // note that this may need to be CurrentUserSubject and not behavior
       this.currentUser=this.userService.currentUserBehaviorSubject.value
+      // this.hasJoined=event.has_joined
     })
 
 
   }
 
-  toggleJoinEvent(){}
+  // toggleJoinEvent(){}
 
+  toggleJoinEvent() {
+    // console.log(this.toggleAttending)
+    this.hasJoined=this.toggleAttending
+    console.log(this.event.id)
+    console.log(this.hasJoined)
+    const eventJoin$ = this.hasJoined
+      ? this.eventService.leaveEvent(this.event.id)
+      : this.eventService.joinEvent(this.event.id);
 
+    eventJoin$.subscribe({
+      next: () => {
+        this.hasJoined=!this.hasJoined
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
 
 
 
   //   toggleJoinEvent(){
-  //     const eventJoin$=this.hasJoined ? this.eventService.leaveEvent(this.event.id) :
+  //     const eventJoin$=this.toggleAttending ? this.eventService.leaveEvent(this.event.id) :
   //     eventJoin$.subscribe({
   //         next: ()=>{
   //             this.hasJoined=!this.hasJoined
