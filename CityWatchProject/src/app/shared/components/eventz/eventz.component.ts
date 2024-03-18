@@ -28,14 +28,14 @@ export class EventzComponent implements OnInit {
   ngOnInit(): void {
     // this.eventService.getEvent('id').subscribe({
     //   next: (event:Event)=>{
-    //       this.event=event
-    //       // this.hasJoined=event.has_joined
-    //       console.log(this.event)
-    //       // prepare guests
-    //       // this.prepareGuests()
-    //   },
-    //   error:(error)=>{
-    //     console.log(error)
+      //       this.event=event
+      //       // this.hasJoined=event.has_joined
+      //       console.log(this.event)
+      //       // prepare guests
+      //       // this.prepareGuests()
+      //   },
+      //   error:(error)=>{
+        //     console.log(error)
     //   }
     // })
     // this.hasJoined = this.event.has_joined
@@ -50,24 +50,46 @@ export class EventzComponent implements OnInit {
 
   // toggleJoinEvent(){}
 
+
+
+
   toggleJoinEvent() {
-    // console.log(this.toggleAttending)
-    this.hasJoined=this.toggleAttending
-    console.log(this.event.id)
-    console.log(this.hasJoined)
+    this.hasJoined = this.toggleAttending; // Set hasJoined based on toggleAttending value
+    const eventId = this.event.id; // Get the event ID
+
     const eventJoin$ = this.hasJoined
-      ? this.eventService.leaveEvent(this.event.id)
-      : this.eventService.joinEvent(this.event.id);
+      ? this.eventService.joinEvent(eventId) // Join the event if hasJoined is true
+      : this.eventService.leaveEvent(eventId); // Leave the event if hasJoined is false
 
     eventJoin$.subscribe({
       next: () => {
-        this.hasJoined=!this.hasJoined
+        // Toggle hasJoined after the API call is successful
+        this.hasJoined = !this.hasJoined;
       },
       error: (error) => {
         console.log(error);
       }
     });
   }
+
+  // toggleJoinEvent() {
+  //   this.hasJoined=this.toggleAttending
+  //   // console.log(this.toggleAttending)
+  //   console.log(this.event.id)
+  //   console.log(this.hasJoined)
+  //   const eventJoin$ = this.hasJoined
+  //   ? this.eventService.leaveEvent(this.event.id)
+  //   : this.eventService.joinEvent(this.event.id);
+
+  //   eventJoin$.subscribe({
+  //     next: () => {
+  //       this.hasJoined=!this.hasJoined
+  //     },
+  //     error: (error) => {
+  //       console.log(error);
+  //     }
+  //   });
+  // }
 
 
 
