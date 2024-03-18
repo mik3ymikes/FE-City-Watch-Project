@@ -5,13 +5,13 @@ import { User } from '../../models/user';
 import { UserService } from '../../../core/services/user.service';
 import {FormsModule } from '@angular/forms';
 import { EventService } from '../../../core/services/event.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-eventz',
   standalone: true,
-  imports: [DatePipe, FormsModule],
+  imports: [DatePipe, FormsModule, RouterLink],
   templateUrl: './eventz.component.html',
   styleUrl: './eventz.component.css'
 })
@@ -92,7 +92,7 @@ export class EventzComponent implements OnInit {
         this.hasJoined = !this.hasJoined;
 
         // this.event.has_joined=!this.event.has_joined
-        console.log(this.event.has_joined)
+        // console.log(this.event.has_joined)
       },
       error: (error) => {
         console.log(error);
@@ -103,7 +103,7 @@ export class EventzComponent implements OnInit {
 
 
   viewAttendees(){
-    this.router.navigate(['/view-attendees'])
+    this.router.navigate(['/view-attendees', this.event.id])
   }
 
   // toggleJoinEvent() {

@@ -33,7 +33,7 @@ export const routes: Routes = [
   loadComponent: () => import('./add-alert/add-alert.component').then((c) =>
   c.AddAlertComponent), canActivate: [authGuard]
  },
- { path: 'view-attendees', component: ViewAttendeesComponent},
+ { path: 'view-attendees/:id', component: ViewAttendeesComponent, canActivate: [authGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
