@@ -39,6 +39,7 @@ export class EventzComponent implements OnInit {
     //   }
     // })
     // this.hasJoined = this.event.has_joined
+
     this.userService.currentUserBehaviorSubject.subscribe(()=>{
       // note that this may need to be CurrentUserSubject and not behavior
       this.currentUser=this.userService.currentUserBehaviorSubject.value
