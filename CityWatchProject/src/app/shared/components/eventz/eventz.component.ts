@@ -19,6 +19,7 @@ import { EventService } from '../../../core/services/event.service';
 
 export class EventzComponent implements OnInit {
   // @Input() eventId: string | number = '';
+
   toggleAttending:boolean=false
   hasJoined: boolean =false
   currentUser: User | null = new User ({})
@@ -26,6 +27,8 @@ export class EventzComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // const eventId = this.event.id;
+    // console.log(eventId)
     // this.eventService.getEvent('id').subscribe({
     //   next: (event:Event)=>{
       //       this.event=event
@@ -39,6 +42,7 @@ export class EventzComponent implements OnInit {
     //   }
     // })
     // this.hasJoined = this.event.has_joined
+    // console.log(this.hasJoined)
 
     this.userService.currentUserBehaviorSubject.subscribe(()=>{
       // note that this may need to be CurrentUserSubject and not behavior
