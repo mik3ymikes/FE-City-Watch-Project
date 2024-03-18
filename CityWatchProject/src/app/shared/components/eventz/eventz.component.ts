@@ -27,8 +27,24 @@ export class EventzComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+
+
+
     // const eventId = this.event.id;
     // console.log(eventId)
+    // this.eventService.getEvent(eventId).subscribe({
+    //   next: (event: Event) => {
+    //     this.event = event;
+    //     // this.toggleAttending = this.event.has_joined;
+    //     this.hasJoined=event.has_joined
+    //     console.log(this.hasJoined);
+    //     console.log(this.event.has_joined)
+    //   },
+    //   error: (error) => {
+    //     console.log(error);
+    //   }
+    // });
     // this.eventService.getEvent('id').subscribe({
     //   next: (event:Event)=>{
       //       this.event=event
@@ -59,6 +75,8 @@ export class EventzComponent implements OnInit {
 
 
   toggleJoinEvent() {
+
+
     this.hasJoined = this.toggleAttending; // Set hasJoined based on toggleAttending value
     const eventId = this.event.id; // Get the event ID
 
@@ -70,6 +88,9 @@ export class EventzComponent implements OnInit {
       next: () => {
         // Toggle hasJoined after the API call is successful
         this.hasJoined = !this.hasJoined;
+
+        // this.event.has_joined=!this.event.has_joined
+        console.log(this.event.has_joined)
       },
       error: (error) => {
         console.log(error);
@@ -94,20 +115,6 @@ export class EventzComponent implements OnInit {
   //       console.log(error);
   //     }
   //   });
-  // }
-
-
-
-  //   toggleJoinEvent(){
-  //     const eventJoin$=this.toggleAttending ? this.eventService.leaveEvent(this.event.id) :
-  //     eventJoin$.subscribe({
-  //         next: ()=>{
-  //             this.hasJoined=!this.hasJoined
-  //   },
-  //   error: (error) =>{
-  //     console.log(error)
-  //   }
-  // })
   // }
 
 

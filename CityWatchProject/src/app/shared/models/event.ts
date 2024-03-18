@@ -14,6 +14,7 @@ title: string = '';
 cover_image_url: string = '';
 user?:User;
 
+
 // constructor(event:any){
 //   this.id=event.id || 0;
 //   this.content=event.content || "";
