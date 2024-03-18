@@ -1,6 +1,14 @@
-<h2>participants</h2>
 
-@for(part of event.participants; track event.id){
 
-  <p>{{event.participants}}</p>
-}
+<div class="container-fluid" id="paper">
+  <div id="pattern">
+    <div id="content">
+      Attending
+      @for(part of event.participants; track event.id){
+
+        <p>{{part.username}}</p>
+      }
+    </div>
+
+  </div>
+</div>
