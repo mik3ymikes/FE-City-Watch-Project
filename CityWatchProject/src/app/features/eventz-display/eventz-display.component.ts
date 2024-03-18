@@ -3,7 +3,7 @@ import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
 // import { PaginationComponent } from '../../pagination/pagination.component';
-import { ActivatedRoute, Router } from '@angular/router';;
+import { ActivatedRoute, Router } from '@angular/router';
 // import { UserService } from '../../core/services/user.service';
 // import { User } from '../../shared/models/user';
 
@@ -38,7 +38,7 @@ constructor(private eventService:EventService,
 
 ngOnInit(): void {
 
-  
+
   this.route.queryParams.subscribe(params=>{
       const page=params['page'] ? Number(params['page']) :1
       this.loadEvents(page)

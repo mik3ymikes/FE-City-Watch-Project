@@ -9,6 +9,7 @@ import { SignupComponent } from './features/auth/signup/signup.component';
 import { authGuard } from './core/guards/auth.guard';
 import { noAuthGuard } from './core/guards/no-auth.guard';
 import { AddEventComponent } from './add-event/add-event.component';
+import { ViewAttendeesComponent } from './view-attendees/view-attendees.component';
 
 
 export const routes: Routes = [
@@ -32,6 +33,7 @@ export const routes: Routes = [
   loadComponent: () => import('./add-alert/add-alert.component').then((c) =>
   c.AddAlertComponent), canActivate: [authGuard]
  },
+ { path: 'view-attendees', component: ViewAttendeesComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];

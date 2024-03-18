@@ -5,6 +5,7 @@ import { User } from '../../models/user';
 import { UserService } from '../../../core/services/user.service';
 import {FormsModule } from '@angular/forms';
 import { EventService } from '../../../core/services/event.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class EventzComponent implements OnInit {
   toggleAttending:boolean=false
   hasJoined: boolean =false
   currentUser: User | null = new User ({})
-  constructor(private userService: UserService, private eventService:EventService){}
+  constructor(private userService: UserService, private eventService:EventService,
+    private router:Router, private route:ActivatedRoute){}
 
 
   ngOnInit(): void {
@@ -96,6 +98,12 @@ export class EventzComponent implements OnInit {
         console.log(error);
       }
     });
+  }
+
+
+
+  viewAttendees(){
+    this.router.navigate(['/view-attendees'])
   }
 
   // toggleJoinEvent() {
