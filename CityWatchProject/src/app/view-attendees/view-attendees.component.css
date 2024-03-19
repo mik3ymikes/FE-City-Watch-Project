@@ -1,14 +1,18 @@
-body {
+
+.main{
+  height: 100vh;
   background-color: rgba(0,0,0,0.1);
-  /* min-height: 100vh; */
 }
+
+
 
 /* styling paper */
 #paper {
-  width: 600px;
-  height: 700px;
+  width: 60%;
+  /* width: 600px; */
+  height: 100vh;
   position: relative;
-  margin: 20px auto;
+  margin: 2% auto;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: white;
@@ -29,17 +33,26 @@ body {
 /* styling blue horizontal lines */
 #pattern {
   height: 100%;
-  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+  background-image: repeating-linear-gradient(white 0%, white 4%, rgb(2, 158, 158) 5%);
+
 }
 
 /* styling text content */
 #content {
-  padding-top: 6px;
-  padding-left: 56px;
-  padding-right: 16px;
-  line-height: 25px;
+  /* padding-top: 10%; */
+  /* padding-top: 6px; */
+  padding-left: 14%;
+
+  /* padding-right: 16px; */
+  line-height: 150%;
   font-family: 'Dancing Script', cursive;
-  font-size: 19px;
-  letter-spacing: 1px;
-  word-spacing: 5px;
+  font-size: 1rem;
+  font-weight: 550;
+
+}
+
+h2{
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: underline;
 }
