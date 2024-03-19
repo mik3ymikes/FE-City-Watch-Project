@@ -33,6 +33,11 @@ export class EventService {
     return this.http.patch<Event>(`${environment.apiUrl}/events/${eventId}`, formData);
   }
 
+//double check this 
+  deleteEvent(eventId:number){
+    return this.http.delete(`${environment.apiUrl}/events/${eventId}`)
+  }
+
 
   joinEvent(eventId:number){
     return this.http.post(`${environment.apiUrl}/events/${eventId}/join`, {})
