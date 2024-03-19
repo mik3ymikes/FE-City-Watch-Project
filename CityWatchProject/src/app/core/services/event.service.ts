@@ -29,8 +29,8 @@ export class EventService {
   }
 
 // iffy check on this
-  updateEvent(id: string | number, formData:FormData){
-    return this.http.patch<Event>(`/api/events/${id}`, formData);
+  updateEvent(eventId: string | number, formData:FormData){
+    return this.http.patch<Event>(`${environment.apiUrl}/events/${eventId}`, formData);
   }
 
 
