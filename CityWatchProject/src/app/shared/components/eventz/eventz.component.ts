@@ -106,7 +106,10 @@ export class EventzComponent implements OnInit {
     this.router.navigate(['/view-attendees', this.event.id])
   }
 
-  editPage(){}
+  
+  editPage(){
+    this.router.navigate(['/edit-event', this.event.id])
+  }
 
   // toggleJoinEvent() {
   //   this.hasJoined=this.toggleAttending

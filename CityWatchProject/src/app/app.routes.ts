@@ -10,6 +10,7 @@ import { authGuard } from './core/guards/auth.guard';
 import { noAuthGuard } from './core/guards/no-auth.guard';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ViewAttendeesComponent } from './view-attendees/view-attendees.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 
 export const routes: Routes = [
@@ -34,6 +35,7 @@ export const routes: Routes = [
   c.AddAlertComponent), canActivate: [authGuard]
  },
  { path: 'view-attendees/:id', component: ViewAttendeesComponent, canActivate: [authGuard]},
+ { path: 'edit-event/:id', component: EditEventComponent, canActivate: [authGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
