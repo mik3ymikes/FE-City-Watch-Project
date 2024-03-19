@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from '../core/services/authentication.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from '../core/services/event.service';
 import { Event } from '../shared/models/event';
 import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinner.component';
@@ -14,16 +14,32 @@ import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinn
   templateUrl: './edit-event.component.html',
   styleUrl: './edit-event.component.css'
 })
-export class EditEventComponent {
+export class EditEventComponent implements OnInit {
+  event:Event = new Event ()
   isError:boolean=false
   errors:string[]=[]
   isLoading=false
   selectedFile: File | null = null;
 
 
-  constructor(private authService:AuthenticationService, private router:Router, private eventService:EventService){}
+  constructor(private authService:AuthenticationService, private route:ActivatedRoute,
+    private router:Router, private eventService:EventService){}
 
 
+    ngOnInit(): void {
+      this.route.params.subscribe((params)=>{
+        this.eventService.getEvent(params['id']).subscribe({
+          next: (event:Event)=>{
+              this.event=event
+              console.log(this.event)
+
+          },
+          error:(error)=>{
+            console.log(error)
+          }
+        })
+        })
+      }
 
 
   addEventForm=new FormGroup({
@@ -103,3 +119,4 @@ onFileSelected(event: any) {
 
 
 }
+
