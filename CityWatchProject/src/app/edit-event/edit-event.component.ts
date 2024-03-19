@@ -57,7 +57,7 @@ export class EditEventComponent implements OnInit {
 
   })
 
-  onSubmit(){
+  onEdit(){
     console.log('FormGroup:', this.addEventForm.value);
     if (this.addEventForm.valid) {
 
@@ -81,7 +81,7 @@ export class EditEventComponent implements OnInit {
 
       this.isLoading=true
       //add update event here%$%$%$ figure out why patch doesnt work
-      this.eventService.createEvent(formData).subscribe({
+      this.eventService.updateEvent(this.event.id ,formData).subscribe({
         next: (event:Event)=>{
         console.log('FormData:', formData)
         // next: ()=>{

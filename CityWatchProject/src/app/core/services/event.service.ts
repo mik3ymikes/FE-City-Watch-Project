@@ -29,7 +29,7 @@ export class EventService {
   }
 
 // iffy check on this
-  updateEvent(id :string, formData:FormData){
+  updateEvent(id: string | number, formData:FormData){
     return this.http.patch<Event>(`/api/events/${id}`, formData);
   }
 
