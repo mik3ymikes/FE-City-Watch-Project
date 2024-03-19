@@ -77,9 +77,9 @@ export class EditEventComponent implements OnInit {
 
 
 
-      // const formValue=this.addEventForm.value
+
       this.isLoading=true
-      // console.log(formValue)
+      //add update event here%$%$%$ figure out why patch doesnt work 
       this.eventService.createEvent(formData).subscribe({
         next: (event:Event)=>{
         console.log('FormData:', formData)
