@@ -1,7 +1,7 @@
 <div class="card mb-4 bg-dark text-white card-con" style="width: 18rem ;">
   <div class="close">
     @if(event.user?.id == currentUser?.id){
-      <button class="btn btn-dark btn-sm">X</button>
+      <button class="btn btn-dark btn-sm" (click)="editPage()">X</button>
     }
   </div>
   <img [src]="event.cover_image_url || 'https://source.unsplash.com/random?'+ event.title"  class="card-img-top" alt="" style="max-height: 200px;">
