@@ -40,11 +40,11 @@
 /* styling text content */
 #content {
   /* padding-top: 10%; */
-  /* padding-top: 6px; */
+  padding-top: 2px;
   padding-left: 14%;
 
   /* padding-right: 16px; */
-  line-height: 150%;
+  /* line-height: 160%; */
   font-family: 'Dancing Script', cursive;
   font-size: 1rem;
   font-weight: 550;
