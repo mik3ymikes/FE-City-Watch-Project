@@ -31,9 +31,13 @@ export class EditEventComponent implements OnInit {
         this.eventService.getEvent(params['id']).subscribe({
           next: (event:Event)=>{
               this.event=event
-              console.log(this.event)
-
-          },
+              this.addEventForm.patchValue({
+                content: event.content,
+                start_date_time: event.start_date_time,
+                end_date_time: event.end_date_time,
+                title: event.title
+              });
+            },
           error:(error)=>{
             console.log(error)
           }
