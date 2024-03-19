@@ -35,7 +35,8 @@ export class EditEventComponent implements OnInit {
                 content: event.content,
                 start_date_time: event.start_date_time,
                 end_date_time: event.end_date_time,
-                title: event.title
+                title: event.title,
+                // cover_image:event.cover_image_url
               });
             },
           error:(error)=>{
@@ -79,7 +80,7 @@ export class EditEventComponent implements OnInit {
 
 
       this.isLoading=true
-      //add update event here%$%$%$ figure out why patch doesnt work 
+      //add update event here%$%$%$ figure out why patch doesnt work
       this.eventService.createEvent(formData).subscribe({
         next: (event:Event)=>{
         console.log('FormData:', formData)
