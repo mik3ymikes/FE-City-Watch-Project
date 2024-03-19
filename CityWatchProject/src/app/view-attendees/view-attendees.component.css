@@ -51,6 +51,11 @@
 
 }
 
+li{
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+}
+
 h2{
   font-style: italic;
   font-weight: 700;
