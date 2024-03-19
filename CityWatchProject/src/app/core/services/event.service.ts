@@ -28,6 +28,11 @@ export class EventService {
     return this.http.post<Event>(`${environment.apiUrl}/events`, formData);
   }
 
+// iffy check on this
+  updateEvent(id :string, formData:FormData){
+    return this.http.patch<Event>(`/api/events/${id}`, formData);
+  }
+
 
   joinEvent(eventId:number){
     return this.http.post(`${environment.apiUrl}/events/${eventId}/join`, {})
