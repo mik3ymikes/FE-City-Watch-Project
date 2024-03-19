@@ -1,4 +1,9 @@
-<div class="card mb-4 bg-dark text-white" style="width: 18rem ;">
+<div class="card mb-4 bg-dark text-white card-con" style="width: 18rem ;">
+  <div class="close">
+    @if(event.user?.id == currentUser?.id){
+      <button class="btn btn-dark btn-sm">X</button>
+    }
+  </div>
   <img [src]="event.cover_image_url || 'https://source.unsplash.com/random?'+ event.title"  class="card-img-top" alt="" style="max-height: 200px;">
   <div class="card-body">
     <h5 class="card-title">{{event.title}}</h5>
@@ -17,7 +22,10 @@
       <label class="label" for="label">Attending</label>
     </li>
   }
-
+  <!-- @if(event.user?.id == currentUser?.id){
+    <li class="list-group-item"> <strong>Modify Event -  </strong>
+      <button class="btn btn-dark btn-sm">Edit</button>
+  } -->
   </ul>
   <div class="card-body d-flex justify-content-center gap-3">
     <a class="card-link btn btn-secondary btn-sm" (click)="viewAttendees()">View Attendees</a>

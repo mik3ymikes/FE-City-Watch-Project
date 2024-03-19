@@ -19,3 +19,18 @@
 .label:checked{
   color: ;
 } */
+
+
+.card-con{
+  position: relative;
+}
+
+.close{
+  position: absolute;
+  right:0
+}
+
+
+.close:hover{
+  scale: 1.2;
+}
