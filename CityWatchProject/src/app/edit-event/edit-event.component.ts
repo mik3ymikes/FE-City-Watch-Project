@@ -31,10 +31,12 @@ export class EditEventComponent implements OnInit {
         this.eventService.getEvent(params['id']).subscribe({
           next: (event:Event)=>{
               this.event=event
+              const formattedStartDate = new Date(event.start_date_time).toISOString().slice(0, 16);
+              const formattedEndDate = new Date(event.end_date_time).toISOString().slice(0, 16);
               this.addEventForm.patchValue({
                 content: event.content,
-                start_date_time: event.start_date_time,
-                end_date_time: event.end_date_time,
+                start_date_time: formattedStartDate,
+                end_date_time: formattedEndDate,
                 title: event.title,
                 // cover_image:event.cover_image_url
               });
