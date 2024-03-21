@@ -48,8 +48,12 @@
             @if (isError) {
              <p class="error">Date ranges cannot be in the past</p>
            }
-    <button type="submit" [disabled]="!addEventForm.valid" >Edit Event </button>
-    <!-- <button type="submit" [disabled]="!addEventForm.valid" >Delete Event </button> -->
+           <div class="d-flex justify-content-center gap-4">
+              <button type="submit" [disabled]="!addEventForm.valid" >Edit Event </button>
+              <button type="submit" [disabled]="!addEventForm.valid" >Delete Event </button>
+
+
+          </div>
 
   </form>
 </div>
