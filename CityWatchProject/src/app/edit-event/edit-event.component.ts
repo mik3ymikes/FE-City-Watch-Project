@@ -99,17 +99,10 @@ export class EditEventComponent implements OnInit {
      })
     }
 
-    // this.eventService.createEvent(formValue).subscribe({
-    //   next: () =>{
-    //      this.router.navigate(['/events'])
-    //   },
-    //   error: (error)=>{
-    //     console.log(error)
-    //   }
-    // })
-
    }
 
+
+   deleteEvent(){}
 
 close(){
   this.router.navigate(['/events']);
