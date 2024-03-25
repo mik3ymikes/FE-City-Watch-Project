@@ -33,8 +33,8 @@ export class EventService {
     return this.http.patch<Event>(`${environment.apiUrl}/events/${eventId}`, formData);
   }
 
-//double check this 
-  deleteEvent(eventId:number){
+//double check this
+  deleteEvent(eventId: string | number){
     return this.http.delete(`${environment.apiUrl}/events/${eventId}`)
   }
 
