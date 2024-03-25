@@ -118,7 +118,6 @@ export class EditEventComponent implements OnInit {
     },
     error: (error:any) =>{
       console.log(error.error)
-      console.log(error.message)
       this.isError=true
       this.errors=error.error
       this.isLoading=false
