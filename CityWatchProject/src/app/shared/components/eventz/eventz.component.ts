@@ -106,7 +106,7 @@ export class EventzComponent implements OnInit {
     this.router.navigate(['/view-attendees', this.event.id])
   }
 
-  
+
   editPage(){
     this.router.navigate(['/edit-event', this.event.id])
   }
@@ -155,8 +155,18 @@ export class EventzComponent implements OnInit {
 //   })
 //   }
 
+getTime(dateTimeString: string): string {
+  const date = new Date(dateTimeString);
+  let hours = date.getHours();
+  const minutes = date.getMinutes();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
 
+  
+  hours = hours % 12;
+  hours = hours ? hours : 12;
 
+  return hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
+}
 
 
 
