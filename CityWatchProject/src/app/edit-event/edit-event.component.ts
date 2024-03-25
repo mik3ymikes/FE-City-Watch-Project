@@ -108,15 +108,17 @@ export class EditEventComponent implements OnInit {
 
 
    deleteEvent(){
+  //    console.log(this.event.id)
   //   this.eventService.deleteEvent(this.event.id).subscribe({
-  //     next: (event:Event)=>{
+  //     // next: (event:Event)=>{
 
-  //     // next: ()=>{
-  //     console.log('event deleted', event)
+  //     next: ()=>{
+  //     console.log('event deleted', this.event.id)
   //     this.router.navigate(['/events'])
   //   },
   //   error: (error:any) =>{
   //     console.log(error.error)
+  //     console.log(error.message)
   //     this.isError=true
   //     this.errors=error.error
   //     this.isLoading=false
