@@ -44,7 +44,7 @@ editPage(){
 
 
 
-@Input({required:true}) alert:Alert=new Alert({})
+@Input({required:true}) alert:Alert=new Alert()
 
 
 

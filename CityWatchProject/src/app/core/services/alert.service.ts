@@ -17,6 +17,19 @@ export class AlertService {
     return this.http.get<Alert[]>(`${environment.apiUrl}/alerts?page=${page}`)
   }
 
+  getAlert(id: string | number) {
+    return this.http.get<Alert>(`${environment.apiUrl}/alerts/${id}`);
+  }
+
+  updateAlert(alertId: string | number, formData:FormData){
+    return this.http.patch<Alert>(`${environment.apiUrl}/alerts/${alertId}`, formData);
+  }
+
+
+  deleteAlert(alertId: string | number){
+    return this.http.delete(`${environment.apiUrl}/alerts/${alertId}`)
+  }
+
 
 
   // getTimeLineAlerts(): Observable <Alert[]>{
