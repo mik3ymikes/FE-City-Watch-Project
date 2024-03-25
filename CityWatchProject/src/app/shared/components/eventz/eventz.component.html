@@ -16,8 +16,8 @@
   </div>
   <ul class="list-group list-group-flush">
       <li class="list-group-item"> <strong>Details - </strong> {{event.content}}</li>
-    <li class="list-group-item"> <strong>Event Time - </strong> {{event.start_date_time | date}} - {{event.end_date_time | date}}
-      from {{ getTime(event.start_date_time) }} - {{ getTime(event.end_date_time) }}  </li>
+    <li class="list-group-item"> <strong>Event Dates - </strong> {{event.start_date_time | date}} - {{event.end_date_time | date}}
+    <li class="list-group-item"> <strong>Event Time - </strong> {{ getTime(event.start_date_time) }} - {{ getTime(event.end_date_time) }} </li>
     <li class="list-group-item"> <strong>Created at - </strong> {{event.created_at | date}}</li>
     <li class="list-group-item"> <strong>Created by - </strong> {{event.user?.username}}</li>
     @if(event.user?.id !== currentUser?.id){
