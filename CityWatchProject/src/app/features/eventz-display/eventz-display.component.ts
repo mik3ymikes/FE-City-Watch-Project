@@ -27,7 +27,7 @@ events: Event[]=[]
 filteredEvents: Event[] = [];
 currentPage: number = 1;
 totalPages:number=0;
-itemsPerPage: number = 20;
+itemsPerPage: number = 21;
 
 
 constructor(private eventService:EventService,
