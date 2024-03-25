@@ -50,7 +50,12 @@
            }
            <div class="d-flex justify-content-center gap-4">
               <button type="submit" [disabled]="!addEventForm.valid" >Edit Event </button>
-              <button type="button" (click)="deleteEvent()" [disabled]="!addEventForm.valid" >Delete Event </button>
+              @if (!confirm) {
+                <button type="submit" (click)="confirmEvent()">Delete Event </button>
+              }
+              @if (confirm) {
+                <button type="button" (click)="deleteEvent()" [disabled]="!addEventForm.valid" >Confirm </button>
+              }
 
 
           </div>

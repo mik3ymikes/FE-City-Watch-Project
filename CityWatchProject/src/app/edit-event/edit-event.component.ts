@@ -20,6 +20,7 @@ export class EditEventComponent implements OnInit {
   errors:string[]=[]
   isLoading=false
   selectedFile: File | null = null;
+  confirm=false
 
 
   constructor(private authService:AuthenticationService, private route:ActivatedRoute,
@@ -101,6 +102,10 @@ export class EditEventComponent implements OnInit {
 
    }
 
+   confirmEvent(){
+    this.confirm=true
+   }
+
 
    deleteEvent(){
   //   this.eventService.deleteEvent(this.event.id).subscribe({
@@ -122,6 +127,7 @@ export class EditEventComponent implements OnInit {
 
 
 close(){
+  this.confirm=false
   this.router.navigate(['/events']);
 }
 
