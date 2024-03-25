@@ -93,10 +93,10 @@ button{
 }
 
 
-button:hover{
+/* button:hover{
   background-color:#000000;
 
-}
+} */
 
 button:disabled{
   /* background-color: #ff0303; */
@@ -139,3 +139,8 @@ input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.n
 
 }
 
+
+
+.deleteEvent{
+  background-color: red;
+}

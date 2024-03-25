@@ -53,8 +53,8 @@
               @if (!confirm) {
                 <button type="submit" (click)="confirmEvent()">Delete Event </button>
               }
-              @if (confirm) {
-                <button type="button" (click)="deleteEvent()" [disabled]="!addEventForm.valid" >Confirm </button>
+              @else {
+                <button class="deleteEvent" type="button" (click)="deleteEvent()">Confirm </button>
               }
 
 
