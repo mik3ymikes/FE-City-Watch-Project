@@ -39,7 +39,7 @@ ngOnInit(): void {
 
 
 editPage(){
-  // this.router.navigate(['/edit-event', this.event.id])
+  this.router.navigate(['/edit-alert', this.alert.id])
 }
 
 
