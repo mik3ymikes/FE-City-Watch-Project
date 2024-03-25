@@ -32,14 +32,14 @@ export class EditAlertComponent implements OnInit {
         this.alertService.getAlert(params['id']).subscribe({
           next: (alert:Alert)=>{
               this.alert=alert
-              // const formattedStartDate = new Date(event.start_date_time).toISOString().slice(0, 16);
-              // const formattedEndDate = new Date(event.end_date_time).toISOString().slice(0, 16);
+              // const formattedStartDate = new Date(alert.start_date_time).toISOString().slice(0, 16);
+              // const formattedEndDate = new Date(alert.end_date_time).toISOString().slice(0, 16);
               this.addAlertForm.patchValue({
                 content: alert.content,
                 // start_date_time: formattedStartDate,
                 // end_date_time: formattedEndDate,
                 title: alert.title,
-                // cover_image:event.cover_image_url
+
               });
             },
           error:(error)=>{
@@ -75,8 +75,8 @@ export class EditAlertComponent implements OnInit {
       this.alertService.updateAlert(this.alert.id ,formData).subscribe({
         next: (alert:Alert)=>{
         console.log('FormData:', formData)
-        console.log('event created', alert)
-        this.router.navigate(['/events'])
+        console.log('alert created', alert)
+        this.router.navigate(['/alerts'])
       },
       error: (error:any) =>{
         console.log(error.error)
@@ -97,7 +97,7 @@ export class EditAlertComponent implements OnInit {
    deleteAlert(){
      console.log(this.alert.id)
     this.alertService.deleteAlert(this.alert.id).subscribe({
-      // next: (alert:Event)=>{
+
 
       next: ()=>{
       console.log('alert deleted', this.alert.id)
