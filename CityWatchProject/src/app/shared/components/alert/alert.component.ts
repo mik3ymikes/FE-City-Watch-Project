@@ -42,6 +42,10 @@ editPage(){
   this.router.navigate(['/edit-alert', this.alert.id])
 }
 
+toComments(){
+  this.router.navigate(['/comments-alert', this.alert.id])
+}
+
 
 
 @Input({required:true}) alert:Alert=new Alert()
