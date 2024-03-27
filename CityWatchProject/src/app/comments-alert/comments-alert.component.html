@@ -1,1 +1,11 @@
-<p>comments-alert works!</p>
+
+
+
+
+
+ @for(comment of alert.comments; track alert.id){
+
+  <li>{{comment.content}}</li>
+  <li>{{comment.user.username}}</li>
+  <li>{{comment.created_at}}</li>
+ }
