@@ -31,16 +31,14 @@ export class AlertService {
   }
 
 
-
-  // getTimeLineAlerts(): Observable <Alert[]>{
-  //  return this.http.get<Alert[]>(`${environment.apiUrl}/alerts`)
-  // }
-
-
-
-
   createAlert(alertData: any): Observable<Alert> {
     return this.http.post<Alert>(`${environment.apiUrl}/alerts`, alertData);
   }
+
+
+
+  // getComments(alertId: string | number): Observable<any[]> {
+  //   return this.http.get<any[]>(`${environment.apiUrl}/alerts/${alertId}/comments`);
+  // }
 
 }

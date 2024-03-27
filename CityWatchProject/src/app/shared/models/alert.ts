@@ -8,7 +8,7 @@ content: string = '';
 created_at: string = '';
 user?:User;
 title: string = '';
-
+// comments: any[]=[]
   // constructor(alert:any){
   //   this.id=alert.id || 0;
   //   this.content=alert.content || "";
