@@ -3,11 +3,12 @@ import { Alert } from '../shared/models/alert';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../core/services/authentication.service';
 import { AlertService } from '../core/services/alert.service';
+import { DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-comments-alert',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './comments-alert.component.html',
   styleUrl: './comments-alert.component.css'
 })
