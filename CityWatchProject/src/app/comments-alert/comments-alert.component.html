@@ -1,16 +1,15 @@
 <div class="main-con container-fluid">
-
-
-
-
-
-  @for(comment of alert.comments; track alert.id){
-    <div class="event-list-item">
-      <div class="event-title">{{comment.content}}</div >
-        <div class="event-username">{{comment.user.username}}</div >
-          <div class="event-datetime">{{comment.created_at}}</div >
-          </div>
-        }
-
-
+  @if(alert.comments.length > 0) {
+    @for(comment of alert.comments; track alert.id){
+      <div class="event-list-item">
+        <div class="event-title">{{comment.content}}</div>
+        <div class="event-username">{{comment.user.username}}</div>
+        <div class="event-datetime">{{comment.created_at}}</div>
       </div>
+    }
+  } @else {
+    <h2>Sorry, No Comments 😒....yet</h2>
+  }
+</div>
+
+
