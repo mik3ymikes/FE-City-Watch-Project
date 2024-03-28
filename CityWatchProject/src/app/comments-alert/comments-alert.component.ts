@@ -14,6 +14,9 @@ import { DatePipe} from '@angular/common';
 })
 export class CommentsAlertComponent implements OnInit {
   alert:Alert = new Alert ()
+  currentPage: number = 1;
+  totalPages:number=0;
+  itemsPerPage: number = 21;
 
   constructor(private authService:AuthenticationService, private route:ActivatedRoute,
     private router:Router, private alertService:AlertService){}
@@ -31,6 +34,45 @@ export class CommentsAlertComponent implements OnInit {
       })
       })
     }
+
+
+
+
+
+    back(){
+      this.router.navigate(['/alerts'])
+    }
+
+
+    // onPageChange(pageNumber: number) {
+    //   this.currentPage = pageNumber;
+    //   this.router.navigate([], {
+    //     relativeTo:this.route,
+    //     queryParams: {page:this.currentPage},
+    //     queryParamsHandling: 'merge'
+    //   }) }
+
+
+
+    // nextPage(){
+    //   if(this.currentPage<this.totalPages){
+    //     this.router.navigate([], {
+    //       relativeTo:this.route,
+    //       queryParams: {page:this.currentPage +1},
+    //       queryParamsHandling: 'merge'
+    //     })
+    //   }
+    // }
+
+    // previousPage(){
+    //   if(this.currentPage>1){
+    //     this.router.navigate([], {
+    //       relativeTo:this.route,
+    //       queryParams: {page:this.currentPage -1},
+    //       queryParamsHandling: 'merge'
+    //     })
+    //   }
+    // }
 
 
   }
