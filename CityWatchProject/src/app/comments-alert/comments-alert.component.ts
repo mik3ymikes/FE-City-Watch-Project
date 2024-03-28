@@ -71,8 +71,8 @@ export class CommentsAlertComponent implements OnInit {
           (response) => {
             console.log('Comment added successfully:', response);
             // Reset form and any error states
-            this.addCommentForm.reset();
-            this.isHidden=false;
+            // this.addCommentForm.reset();
+            this.isHidden=true;
             this.router.navigate(['/comments-alert', this.alert.id]);
             this.isLoading = false;
             this.isError = false;
