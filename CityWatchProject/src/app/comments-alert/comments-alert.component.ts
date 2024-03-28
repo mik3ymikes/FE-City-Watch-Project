@@ -108,6 +108,11 @@ export class CommentsAlertComponent implements OnInit {
     }
 
 
+    addComment(){
+      this.isHidden=false;
+    }
+
+
     editComment(){}
 
 
