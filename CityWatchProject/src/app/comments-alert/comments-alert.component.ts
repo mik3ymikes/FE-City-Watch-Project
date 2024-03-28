@@ -52,6 +52,7 @@ export class CommentsAlertComponent implements OnInit {
             })
         }
 
+
     addCommentForm=new FormGroup({
       content:new FormControl('', [Validators.required, Validators.maxLength(100)]),
     })
@@ -59,35 +60,30 @@ export class CommentsAlertComponent implements OnInit {
 
 
     onSubmit(){
-      // console.log('FormGroup:', this.addEventForm.value);
-      // // if (this.addEventForm.valid && this.selectedFile) {
+      if (this.addCommentForm.valid) {
+        const commentData: any = {
+          content: this.addCommentForm.value.content,
 
-      //   const formData:any = new FormData();
-      //   formData.append('content', this.addEventForm.get('content')!.value)
-      //   // formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
-      //   // formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
-      //   formData.append('title', this.addEventForm.get('title')!.value)
-      //   // formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
-      //   // console.log(this.selectedFile)
+        };
 
-
-      //   // const formValue=this.addEventForm.value
-      //   this.isLoading=true
-      //   // console.log(formValue)
-      //   this.alertService.createAlert(formData).subscribe({
-      //     next: (event:Alert)=>{
-      //     console.log('FormData:', formData)
-      //     // next: ()=>{
-      //     console.log('alert created', alert)
-      //     this.router.navigate(['/alerts'])
-      //   },
-      //   error: (error:any) =>{
-      //     console.log(error.error)
-      //     this.isError=true
-      //     this.errors=error.error
-      //     this.isLoading=false
-      //   }
-      //  })
+        this.isLoading = true;
+        this.alertService.addComment(this.alert.id, commentData).subscribe(
+          (response) => {
+            console.log('Comment added successfully:', response);
+            // Reset form and any error states
+            this.addCommentForm.reset();
+            this.isHidden=false;
+            this.router.navigate(['/comments-alert', this.alert.id]);
+            this.isLoading = false;
+            this.isError = false;
+          },
+          (error) => {
+            console.error('Error adding comment:', error);
+            this.isLoading = false;
+            this.isError = true;
+          }
+        );
+      }
 
       }
 
