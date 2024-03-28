@@ -36,7 +36,7 @@
       }
     </div> -->
         <div class="alert-title">{{comment.content}}</div>
-        <div class="alert-username">{{comment.user.username}}</div>
+        <div class="alert-username">{{comment.user?.username}}</div>
         <div class="alert-datetime">{{comment.created_at |date }}</div>
       </div>
     }

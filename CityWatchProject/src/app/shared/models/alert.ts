@@ -1,4 +1,5 @@
 import { User } from "./user";
+import { Comment } from "./comment";
 
 export class Alert {
 id!:number;
@@ -8,7 +9,7 @@ content: string = '';
 created_at: string = '';
 user?:User;
 title: string = '';
-comments:any []=[]
+comments:Comment []=[]
 // comments: Comment[]=[]
   // constructor(alert:any){
   //   this.id=alert.id || 0;

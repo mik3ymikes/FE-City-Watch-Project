@@ -18,7 +18,7 @@ import { Comment } from '../shared/models/comment';
 export class CommentsAlertComponent implements OnInit {
   currentUser: User | null = new User ({})
   alert:Alert = new Alert ()
-  // comment:Comment[]=[]
+  comment:Comment[]=[]
   // currentPage: number = 1;
   // totalPages:number=0;
   // itemsPerPage: number = 21;
