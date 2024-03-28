@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../core/services/authentication.service';
 import { AlertService } from '../core/services/alert.service';
 import { DatePipe} from '@angular/common';
+import { UserService } from '../core/services/user.service';
+import { User } from '../shared/models/user';
 
 @Component({
   selector: 'app-comments-alert',
@@ -13,13 +15,14 @@ import { DatePipe} from '@angular/common';
   styleUrl: './comments-alert.component.css'
 })
 export class CommentsAlertComponent implements OnInit {
+  currentUser: User | null = new User ({})
   alert:Alert = new Alert ()
-  currentPage: number = 1;
-  totalPages:number=0;
-  itemsPerPage: number = 21;
+  // currentPage: number = 1;
+  // totalPages:number=0;
+  // itemsPerPage: number = 21;
 
   constructor(private authService:AuthenticationService, private route:ActivatedRoute,
-    private router:Router, private alertService:AlertService){}
+    private router:Router, private alertService:AlertService, private userService:UserService){}
 
 
   ngOnInit(): void {
@@ -33,6 +36,10 @@ export class CommentsAlertComponent implements OnInit {
         }
       })
       })
+      this.userService.currentUserBehaviorSubject.subscribe(()=>{
+        this.currentUser=this.userService.currentUserBehaviorSubject.value
+
+        })
     }
 
 
@@ -42,6 +49,9 @@ export class CommentsAlertComponent implements OnInit {
     back(){
       this.router.navigate(['/alerts'])
     }
+
+
+    editComment(){}
 
 
     // onPageChange(pageNumber: number) {
