@@ -6,6 +6,7 @@ import { AlertService } from '../core/services/alert.service';
 import { DatePipe} from '@angular/common';
 import { UserService } from '../core/services/user.service';
 import { User } from '../shared/models/user';
+import { Comment } from '../shared/models/comment';
 
 @Component({
   selector: 'app-comments-alert',
@@ -17,6 +18,7 @@ import { User } from '../shared/models/user';
 export class CommentsAlertComponent implements OnInit {
   currentUser: User | null = new User ({})
   alert:Alert = new Alert ()
+  // comment:Comment[]=[]
   // currentPage: number = 1;
   // totalPages:number=0;
   // itemsPerPage: number = 21;
