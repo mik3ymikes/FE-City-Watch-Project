@@ -36,6 +36,10 @@ export class AlertService {
   }
 
 
+  addComment(alertId: string | number, commentData:Comment): Observable<Comment>{
+    return this.http.post<Comment>(`${environment.apiUrl}/alerts/${alertId}/comments`, commentData);
+  }
+
 
   // getComments(alertId: string | number): Observable<any[]> {
   //   return this.http.get<any[]>(`${environment.apiUrl}/alerts/${alertId}/comments`);
