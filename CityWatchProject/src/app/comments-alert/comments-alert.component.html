@@ -4,17 +4,27 @@
       @if(alert.comments.length > 0) {
     <div class="d-flex border-bottom justify-content-between">
       <h1 class="mt-3">Comments</h1>
-      <div class="d-flex gap-3 align-items-center">
+      <div class="d-flex gap-2 align-items-center">
         <button class="btn btn-dark btn-sm ">Add Comment</button>
         <div class="d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-backspace-reverse-fill" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-backspace-reverse-fill" viewBox="0 0 16 16">
             <path d="M0 3a2 2 0 0 1 2-2h7.08a2 2 0 0 1 1.519.698l4.843 5.651a1 1 0 0 1 0 1.302L10.6 14.3a2 2 0 0 1-1.52.7H2a2 2 0 0 1-2-2zm9.854 2.854a.5.5 0 0 0-.708-.708L7 7.293 4.854 5.146a.5.5 0 1 0-.708.708L6.293 8l-2.147 2.146a.5.5 0 0 0 .708.708L7 8.707l2.146 2.147a.5.5 0 0 0 .708-.708L7.707 8z"/>
           </svg>
           <!-- <span class="ms-1">Back</span> -->
         </div>
       </div>
     </div>
-  <h2 class="">{{alert.title}}</h2>
+  <div class="card text-white bg-dark mb-3 mt-4" style="max-width: 25rem;">
+
+    <div class="card-body">
+      <h5 class="card-title">{{alert.title}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill " viewBox="0 0 16 16" style="margin-left: 2%;">
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+      </svg> </h5>
+
+      <br>
+      <p class="card-text">{{alert.content}}</p>
+    </div>
+    </div>
     @for(comment of alert.comments; track alert.id){
       <div class="event-list-item">
         <div class="event-title">{{comment.content}}</div>
@@ -24,7 +34,7 @@
     }
   } @else {
     <div class="d-flex border-bottom justify-content-between">
-      <h2 class="mt-1">Sorry, No Comments 😒....yet</h2>
+      <h2 class="mt-3">Sorry, No Comments 😒....yet!</h2>
 
       <div class="d-flex gap-3 align-items-center">
         <button class="btn btn-dark btn-sm ">Add Comment</button>
