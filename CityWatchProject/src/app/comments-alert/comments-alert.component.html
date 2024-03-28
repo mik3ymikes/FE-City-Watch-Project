@@ -70,11 +70,11 @@
   <div [hidden]="isHidden" class="container-fluid popup modal" >
     <form [formGroup]="addCommentForm" (ngSubmit)="onSubmit()" class="form" >
       <span (click)="close()" class="close">&times;</span>
-      <h1 class="text-center">Add a comment</h1>
+      <h1 class="text-center">Add a Comment</h1>
 
       <div class="form-group">
         <label for="content">Content</label>
-        <textarea placeholder=" Tell us about the event" formControlName="content" rows="4" cols="28"></textarea>
+        <textarea placeholder=" Tell us something interesting!" formControlName="content" rows="4" cols="28"></textarea>
       </div>
 
       @if (isLoading) {
