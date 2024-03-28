@@ -27,7 +27,7 @@
       </div>
     </div>
     @for(comment of alert.comments; track alert.id){
-      <div class="event-list-item">
+      <div class="event-list-item mt-4">
         <div class="event-title">{{comment.content}}</div>
         <div class="event-username">{{comment.user.username}}</div>
         <div class="event-datetime">{{comment.created_at |date }}</div>
