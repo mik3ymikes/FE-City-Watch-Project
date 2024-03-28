@@ -6,19 +6,28 @@ import { AlertService } from '../core/services/alert.service';
 import { DatePipe} from '@angular/common';
 import { UserService } from '../core/services/user.service';
 import { User } from '../shared/models/user';
+import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinner.component';
 import { Comment } from '../shared/models/comment';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-comments-alert',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, ReactiveFormsModule, LoadingSpinnerComponent],
   templateUrl: './comments-alert.component.html',
   styleUrl: './comments-alert.component.css'
 })
+
+
+
 export class CommentsAlertComponent implements OnInit {
+  isError:boolean=false
+  errors:string[]=[]
+  isLoading=false
   currentUser: User | null = new User ({})
   alert:Alert = new Alert ()
   comment:Comment[]=[]
+  isHidden=true;
   // currentPage: number = 1;
   // totalPages:number=0;
   // itemsPerPage: number = 21;
@@ -26,23 +35,69 @@ export class CommentsAlertComponent implements OnInit {
   constructor(private authService:AuthenticationService, private route:ActivatedRoute,
     private router:Router, private alertService:AlertService, private userService:UserService){}
 
+      ngOnInit(): void {
+        this.route.params.subscribe((params)=>{
+          this.alertService.getAlert(params['id']).subscribe({
+            next: (alert:Alert)=>{
+                this.alert=alert
+              },
+            error:(error)=>{
+              console.log(error)
+            }
+          })
+          })
+          this.userService.currentUserBehaviorSubject.subscribe(()=>{
+            this.currentUser=this.userService.currentUserBehaviorSubject.value
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params)=>{
-      this.alertService.getAlert(params['id']).subscribe({
-        next: (alert:Alert)=>{
-            this.alert=alert
-          },
-        error:(error)=>{
-          console.log(error)
+            })
         }
-      })
-      })
-      this.userService.currentUserBehaviorSubject.subscribe(()=>{
-        this.currentUser=this.userService.currentUserBehaviorSubject.value
 
-        })
+    addCommentForm=new FormGroup({
+      content:new FormControl('', [Validators.required, Validators.maxLength(100)]),
+    })
+
+
+
+    onSubmit(){
+      // console.log('FormGroup:', this.addEventForm.value);
+      // // if (this.addEventForm.valid && this.selectedFile) {
+
+      //   const formData:any = new FormData();
+      //   formData.append('content', this.addEventForm.get('content')!.value)
+      //   // formData.append('start_date_time', this.addEventForm.get('start_date_time')!.value)
+      //   // formData.append('end_date_time', this.addEventForm.get('end_date_time')!.value)
+      //   formData.append('title', this.addEventForm.get('title')!.value)
+      //   // formData.append('cover_image', this.selectedFile, this.selectedFile!.name);
+      //   // console.log(this.selectedFile)
+
+
+      //   // const formValue=this.addEventForm.value
+      //   this.isLoading=true
+      //   // console.log(formValue)
+      //   this.alertService.createAlert(formData).subscribe({
+      //     next: (event:Alert)=>{
+      //     console.log('FormData:', formData)
+      //     // next: ()=>{
+      //     console.log('alert created', alert)
+      //     this.router.navigate(['/alerts'])
+      //   },
+      //   error: (error:any) =>{
+      //     console.log(error.error)
+      //     this.isError=true
+      //     this.errors=error.error
+      //     this.isLoading=false
+      //   }
+      //  })
+
+      }
+
+
+    close(){
+      this.router.navigate(['/alerts']);
     }
+
+
+
 
 
 
