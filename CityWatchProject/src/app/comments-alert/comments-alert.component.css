@@ -142,7 +142,7 @@ input{
 
 
 
-/* button{
+.submit{
   padding: .75rem;
   border: none;
   background-color: #000000;
@@ -151,7 +151,7 @@ input{
   cursor: pointer;
   transition: background-color 0.3s;
   color: white;
-} */
+}
 
 
 button:hover{
