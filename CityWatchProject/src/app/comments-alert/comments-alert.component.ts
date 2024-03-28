@@ -93,11 +93,12 @@ export class CommentsAlertComponent implements OnInit {
 
 
     close(){
-      this.router.navigate(['/alerts']);
+      this.isHidden=true
+      // this.router.navigate(['/comments-alert', this.alert.id]);
     }
 
 
-
+    // comments-alert/:id
 
 
 
