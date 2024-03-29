@@ -114,10 +114,10 @@ export class CommentsAlertComponent implements OnInit {
     }
 
 
-    editComment(){}
+    // editComment(){}
 
 
-
+    deleteComment(){}
 
 
 
