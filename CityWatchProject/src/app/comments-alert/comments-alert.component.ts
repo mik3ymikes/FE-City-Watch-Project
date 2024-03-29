@@ -28,6 +28,7 @@ export class CommentsAlertComponent implements OnInit {
   alert:Alert = new Alert ()
   comment:Comment[]=[]
   isHidden=true;
+  confirm=false
   // currentPage: number = 1;
   // totalPages:number=0;
   // itemsPerPage: number = 21;
@@ -94,6 +95,7 @@ export class CommentsAlertComponent implements OnInit {
 
     close(){
       this.isHidden=true
+      this.confirm=false
       // this.router.navigate(['/comments-alert', this.alert.id]);
     }
 
@@ -114,7 +116,9 @@ export class CommentsAlertComponent implements OnInit {
     }
 
 
-    // editComment(){}
+    confirmComment(){
+      this.confirm=false
+    }
 
 
     deleteComment(){}
