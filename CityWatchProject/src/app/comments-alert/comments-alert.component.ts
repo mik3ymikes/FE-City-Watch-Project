@@ -128,8 +128,6 @@ export class CommentsAlertComponent implements OnInit {
 
         next: () => {
           console.log('Comment deleted successfully');
-          // Assuming you want to remove the deleted comment from the local array
-          // Find the index of the comment in the local array and remove it
           const index = this.comment.findIndex(comment => comment.id === commentId);
           if (index !== -1) {
               this.comment.splice(index, 1);
