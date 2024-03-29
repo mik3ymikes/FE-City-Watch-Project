@@ -117,7 +117,7 @@ export class CommentsAlertComponent implements OnInit {
 
 
     confirmComment(){
-      this.confirm=false
+      this.confirm=true
     }
 
 
