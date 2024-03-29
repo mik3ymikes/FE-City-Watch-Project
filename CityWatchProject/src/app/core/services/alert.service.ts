@@ -41,10 +41,15 @@ export class AlertService {
   }
 
 
+//check this later
+  deleteComment(alertId: string | number, commentId: string | number): Observable<Comment>{
+    return this.http.delete<Comment>(`${environment.apiUrl}/alerts/${alertId}/comments/${commentId}`);
+  }
 
-  // deleteComment(alertId: string | number): Observable<Comment>{
-  //   return this.http.post<Comment>(`${environment.apiUrl}/alerts/${alertId}/comments/${commentId});
-  // }
+
+
+
+
 
   // DELETE	/alerts/:alert_id/comments/:id(.:format)
   // comments#destroy
