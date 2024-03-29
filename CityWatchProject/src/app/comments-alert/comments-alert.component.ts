@@ -70,12 +70,14 @@ export class CommentsAlertComponent implements OnInit {
         this.alertService.addComment(this.alert.id, commentData).subscribe(
           (response) => {
             console.log('Comment added successfully:', response);
-            // Reset form and any error states
-            // this.addCommentForm.reset();
+            this.addCommentForm.reset();
             this.isHidden=true;
-            this.router.navigate(['/comments-alert', this.alert.id]);
             this.isLoading = false;
             this.isError = false;
+            this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/comments-alert', this.alert.id]);
+            });
+            // this.router.navigate(['/comments-alert', this.alert.id]);
           },
           (error) => {
             console.error('Error adding comment:', error);
@@ -86,6 +88,8 @@ export class CommentsAlertComponent implements OnInit {
       }
 
       }
+
+
 
 
     close(){
@@ -111,6 +115,14 @@ export class CommentsAlertComponent implements OnInit {
 
 
     editComment(){}
+
+
+
+
+
+
+
+
 
 
     // onPageChange(pageNumber: number) {
