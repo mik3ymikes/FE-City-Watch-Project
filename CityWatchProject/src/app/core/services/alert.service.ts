@@ -46,6 +46,8 @@ export class AlertService {
   //   return this.http.post<Comment>(`${environment.apiUrl}/alerts/${alertId}/comments/${commentId});
   // }
 
+  // DELETE	/alerts/:alert_id/comments/:id(.:format)
+  // comments#destroy
 
   // getComments(alertId: string | number): Observable<any[]> {
   //   return this.http.get<any[]>(`${environment.apiUrl}/alerts/${alertId}/comments`);
