@@ -121,25 +121,33 @@ export class CommentsAlertComponent implements OnInit {
     }
 
 
-    deleteComment(){
-    //   this.alertService.deleteAlert(this.alert.id).subscribe({
+    deleteComment(commentId:string | number){
+      console.log(commentId)
+      console.log("hey")
+      this.alertService.deleteComment(this.alert.id, commentId).subscribe({
 
-
-    //     next: ()=>{
-    //     // console.log('comment deleted', this.comment.id)
-    //     this.router.navigate(['/alerts'])
-    //   },
-    //   error: (error:any) =>{
-    //     console.log(error.error)
-    //     this.isError=true
-    //     this.errors=error.error
-    //     this.isLoading=false
-    //   }
-    //  })
-     }
-
-
-    }
+        next: () => {
+          console.log('Comment deleted successfully');
+          // Assuming you want to remove the deleted comment from the local array
+          // Find the index of the comment in the local array and remove it
+          const index = this.comment.findIndex(comment => comment.id === commentId);
+          if (index !== -1) {
+              this.comment.splice(index, 1);
+          }
+          this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/comments-alert', this.alert.id]);
+          });
+          // Optionally, you can navigate to a different route after deleting the comment
+          // this.router.navigate(['/alerts']);
+      },
+      error: (error: any) => {
+          console.error('Error deleting comment:', error);
+          this.isError = true;
+          this.errors = error.error;
+          this.isLoading = false;
+      }
+  });
+}
 
 
 
@@ -178,6 +186,7 @@ export class CommentsAlertComponent implements OnInit {
     // }
 
 
-  
 
 
+
+}
