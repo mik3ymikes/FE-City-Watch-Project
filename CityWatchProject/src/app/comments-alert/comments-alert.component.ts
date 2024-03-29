@@ -121,7 +121,25 @@ export class CommentsAlertComponent implements OnInit {
     }
 
 
-    deleteComment(){}
+    deleteComment(){
+    //   this.alertService.deleteAlert(this.alert.id).subscribe({
+
+
+    //     next: ()=>{
+    //     // console.log('comment deleted', this.comment.id)
+    //     this.router.navigate(['/alerts'])
+    //   },
+    //   error: (error:any) =>{
+    //     console.log(error.error)
+    //     this.isError=true
+    //     this.errors=error.error
+    //     this.isLoading=false
+    //   }
+    //  })
+     }
+
+
+    }
 
 
 
@@ -160,6 +178,6 @@ export class CommentsAlertComponent implements OnInit {
     // }
 
 
-  }
+  
 
 
