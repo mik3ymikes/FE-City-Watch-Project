@@ -154,10 +154,10 @@ input{
 }
 
 
-button:hover{
+/* button:hover{
   background-color:#000000;
 
-}
+} */
 
 button:disabled{
   /* background-color: #ff0303; */
