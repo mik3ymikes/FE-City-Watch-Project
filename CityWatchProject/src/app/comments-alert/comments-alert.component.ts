@@ -29,6 +29,9 @@ export class CommentsAlertComponent implements OnInit {
   comment:Comment[]=[]
   isHidden=true;
   confirm=false
+  selectedCommentId: string | number | null = null;
+
+
   // currentPage: number = 1;
   // totalPages:number=0;
   // itemsPerPage: number = 21;
@@ -36,32 +39,32 @@ export class CommentsAlertComponent implements OnInit {
   constructor(private authService:AuthenticationService, private route:ActivatedRoute,
     private router:Router, private alertService:AlertService, private userService:UserService){}
 
-      ngOnInit(): void {
+    ngOnInit(): void {
         this.route.params.subscribe((params)=>{
           this.alertService.getAlert(params['id']).subscribe({
             next: (alert:Alert)=>{
-                this.alert=alert
+              this.alert=alert
               },
             error:(error)=>{
               console.log(error)
             }
           })
-          })
+        })
           this.userService.currentUserBehaviorSubject.subscribe(()=>{
             this.currentUser=this.userService.currentUserBehaviorSubject.value
 
-            })
+          })
         }
 
 
-    addCommentForm=new FormGroup({
-      content:new FormControl('', [Validators.required, Validators.maxLength(100)]),
-    })
+        addCommentForm=new FormGroup({
+          content:new FormControl('', [Validators.required, Validators.maxLength(100)]),
+        })
 
 
 
-    onSubmit(){
-      if (this.addCommentForm.valid) {
+        onSubmit(){
+          if (this.addCommentForm.valid) {
         const commentData: any = {
           content: this.addCommentForm.value.content,
 
@@ -85,22 +88,21 @@ export class CommentsAlertComponent implements OnInit {
             this.isLoading = false;
             this.isError = true;
           }
-        );
-      }
+          );
+        }
 
       }
 
 
 
 
-    close(){
-      this.isHidden=true
+      close(){
+        this.isHidden=true
       this.confirm=false
       // this.router.navigate(['/comments-alert', this.alert.id]);
     }
 
 
-    // comments-alert/:id
 
 
 
@@ -116,9 +118,11 @@ export class CommentsAlertComponent implements OnInit {
     }
 
 
-    confirmComment(){
-      this.confirm=true
-    }
+    confirmComment(commentId: string | number) {
+    this.selectedCommentId = commentId;
+     this.confirm = true;
+   }
+
 
 
     deleteComment(commentId:string | number){
@@ -130,7 +134,7 @@ export class CommentsAlertComponent implements OnInit {
           console.log('Comment deleted successfully');
           const index = this.comment.findIndex(comment => comment.id === commentId);
           if (index !== -1) {
-              this.comment.splice(index, 1);
+            this.comment.splice(index, 1);
           }
           this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
             this.router.navigate(['/comments-alert', this.alert.id]);
