@@ -47,7 +47,23 @@ export class EventService {
     return this.http.delete(`${environment.apiUrl}/events/${eventId}/leave`)
   }
 
+
+  addComment(eventId: string | number, commentData:Comment): Observable<Comment>{
+    return this.http.post<Comment>(`${environment.apiUrl}/events/${eventId}/comments`, commentData);
+  }
+
+
+
+  deleteComment(eventId: string | number, commentId: string | number): Observable<Comment>{
+    return this.http.delete<Comment>(`${environment.apiUrl}/events/${eventId}/comments/${commentId}`);
+  }
+
 }
+
+
+
+
+
 
 
 

@@ -41,7 +41,7 @@ export class AlertService {
   }
 
 
-//check this later
+
   deleteComment(alertId: string | number, commentId: string | number): Observable<Comment>{
     return this.http.delete<Comment>(`${environment.apiUrl}/alerts/${alertId}/comments/${commentId}`);
   }
