@@ -140,7 +140,7 @@ export class CommentsAlertComponent implements OnInit {
           this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
             this.router.navigate(['/comments-alert', this.alert.id]);
           });
-        
+
       },
       error: (error: any) => {
           console.error('Error deleting comment:', error);
@@ -150,6 +150,13 @@ export class CommentsAlertComponent implements OnInit {
       }
   });
 }
+
+
+
+
+
+
+
 
 // loadComments() {
 //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
@@ -163,38 +170,6 @@ export class CommentsAlertComponent implements OnInit {
 // }
 
 
-
-
-
-    // onPageChange(pageNumber: number) {
-    //   this.currentPage = pageNumber;
-    //   this.router.navigate([], {
-    //     relativeTo:this.route,
-    //     queryParams: {page:this.currentPage},
-    //     queryParamsHandling: 'merge'
-    //   }) }
-
-
-
-    // nextPage(){
-    //   if(this.currentPage<this.totalPages){
-    //     this.router.navigate([], {
-    //       relativeTo:this.route,
-    //       queryParams: {page:this.currentPage +1},
-    //       queryParamsHandling: 'merge'
-    //     })
-    //   }
-    // }
-
-    // previousPage(){
-    //   if(this.currentPage>1){
-    //     this.router.navigate([], {
-    //       relativeTo:this.route,
-    //       queryParams: {page:this.currentPage -1},
-    //       queryParamsHandling: 'merge'
-    //     })
-    //   }
-    // }
 
 
 
