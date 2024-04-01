@@ -33,8 +33,8 @@ export class CommentsAlertComponent implements OnInit {
 
 
   // currentPage: number = 1;
-  // totalPages:number=0;
-  // itemsPerPage: number = 21;
+  // itemsPerPage: number = 20;
+  // totalComments: number = 0;
 
   constructor(private authService:AuthenticationService, private route:ActivatedRoute,
     private router:Router, private alertService:AlertService, private userService:UserService){}
@@ -44,6 +44,8 @@ export class CommentsAlertComponent implements OnInit {
           this.alertService.getAlert(params['id']).subscribe({
             next: (alert:Alert)=>{
               this.alert=alert
+              // this.totalComments = this.alert.comments.length;
+              // this.loadComments();
               },
             error:(error)=>{
               console.log(error)
@@ -138,8 +140,7 @@ export class CommentsAlertComponent implements OnInit {
           this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
             this.router.navigate(['/comments-alert', this.alert.id]);
           });
-          // Optionally, you can navigate to a different route after deleting the comment
-          // this.router.navigate(['/alerts']);
+        
       },
       error: (error: any) => {
           console.error('Error deleting comment:', error);
@@ -150,7 +151,16 @@ export class CommentsAlertComponent implements OnInit {
   });
 }
 
+// loadComments() {
+//   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+//   const endIndex = startIndex + this.itemsPerPage;
+//   this.comment = this.alert.comments.slice(startIndex, endIndex);
+// }
 
+// onPageChange(pageNumber: number) {
+//   this.currentPage = pageNumber;
+//   this.loadComments();
+// }
 
 
 
