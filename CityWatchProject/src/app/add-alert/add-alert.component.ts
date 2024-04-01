@@ -18,7 +18,7 @@ export class AddAlertComponent {
   isError:boolean=false
   errors:string[]=[]
   isLoading=false
-  selectedFile: File | null = null;
+  // selectedFile: File | null = null;
 
   constructor(private authService:AuthenticationService, private router:Router, private alertService:AlertService){}
 
