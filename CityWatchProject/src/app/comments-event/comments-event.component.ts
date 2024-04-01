@@ -98,10 +98,6 @@ export class CommentsEventComponent {
 
 
 
-
-
-
-
     back(){
       this.router.navigate(['/events'])
     }
