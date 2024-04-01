@@ -111,6 +111,11 @@ export class EventzComponent implements OnInit {
     this.router.navigate(['/edit-event', this.event.id])
   }
 
+  toComments(){
+    this.router.navigate(['/comments-event', this.event.id])
+  }
+
+
   // toggleJoinEvent() {
   //   this.hasJoined=this.toggleAttending
   //   // console.log(this.toggleAttending)

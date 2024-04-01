@@ -13,6 +13,7 @@ import { ViewAttendeesComponent } from './view-attendees/view-attendees.componen
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { EditAlertComponent } from './edit-alert/edit-alert.component';
 import { CommentsAlertComponent } from './comments-alert/comments-alert.component';
+import { CommentsEventComponent } from './comments-event/comments-event.component';
 
 
 export const routes: Routes = [
@@ -40,6 +41,7 @@ export const routes: Routes = [
  { path: 'edit-event/:id', component: EditEventComponent, canActivate: [authGuard]},
  { path: 'edit-alert/:id', component: EditAlertComponent, canActivate: [authGuard]},
  { path: 'comments-alert/:id', component: CommentsAlertComponent, canActivate: [authGuard]},
+ { path: 'comments-event/:id', component: CommentsEventComponent, canActivate: [authGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
