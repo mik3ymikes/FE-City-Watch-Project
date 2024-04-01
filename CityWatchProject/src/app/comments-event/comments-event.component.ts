@@ -103,7 +103,7 @@ export class CommentsEventComponent {
 
 
     back(){
-      this.router.navigate(['/alerts'])
+      this.router.navigate(['/events'])
     }
 
 
@@ -134,7 +134,7 @@ export class CommentsEventComponent {
             this.router.navigate(['/comments-event', this.event.id]);
           });
           // Optionally, you can navigate to a different route after deleting the comment
-          // this.router.navigate(['/alerts']);
+          // this.router.navigate(['/events']);
       },
       error: (error: any) => {
           console.error('Error deleting comment:', error);
