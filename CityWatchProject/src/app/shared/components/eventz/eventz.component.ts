@@ -86,10 +86,13 @@ export class EventzComponent implements OnInit {
       ? this.eventService.joinEvent(eventId) // Join the event if hasJoined is true
       : this.eventService.leaveEvent(eventId); // Leave the event if hasJoined is false
 
+
+
     eventJoin$.subscribe({
       next: () => {
         // Toggle hasJoined after the API call is successful
         this.hasJoined = !this.hasJoined;
+        console.log(this.hasJoined)
 
         // this.event.has_joined=!this.event.has_joined
         // console.log(this.event.has_joined)
