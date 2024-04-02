@@ -22,7 +22,13 @@
     <li class="list-group-item"> <strong>Created by - </strong> {{event.user?.username}}</li>
     @if(event.user?.id !== currentUser?.id){
     <li class="list-group-item"> <strong>Join Event - </strong>
-      <input  class="checkbox" type="checkbox" name="attending" id="attending" (change)="toggleJoinEvent()" [(ngModel)]="toggleAttending">
+      <!-- @if(hasJoined){
+        <button (click)="toggleJoinEvent()">❌</button>
+      }
+      @else {
+        <button (click)="toggleJoinEvent()">✔️</button>
+      } -->
+      <input  class="checkbox" type="checkbox" name="attending" id="attending" (click)="toggleJoinEvent()">
       <label class="label" for="label">Attending</label>
     </li>
   }

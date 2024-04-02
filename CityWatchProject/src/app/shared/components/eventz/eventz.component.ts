@@ -21,7 +21,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 export class EventzComponent implements OnInit {
   // @Input() eventId: string | number = '';
 
-  toggleAttending:boolean=false
+
   hasJoined: boolean =false
   currentUser: User | null = new User ({})
   constructor(private userService: UserService, private eventService:EventService,
@@ -79,11 +79,10 @@ export class EventzComponent implements OnInit {
   toggleJoinEvent() {
 
 
-    this.hasJoined = this.toggleAttending; // Set hasJoined based on toggleAttending value
+    // this.hasJoined = this.toggleAttending; // Set hasJoined based on toggleAttending value
     const eventId = this.event.id; // Get the event ID
 
-    const eventJoin$ = this.hasJoined
-      ? this.eventService.joinEvent(eventId) // Join the event if hasJoined is true
+    const eventJoin$ = this.hasJoined ? this.eventService.joinEvent(eventId) // Join the event if hasJoined is true
       : this.eventService.leaveEvent(eventId); // Leave the event if hasJoined is false
 
 
@@ -91,6 +90,7 @@ export class EventzComponent implements OnInit {
     eventJoin$.subscribe({
       next: () => {
         // Toggle hasJoined after the API call is successful
+        // this.event.has_joined=
         this.hasJoined = !this.hasJoined;
         console.log(this.hasJoined)
 
