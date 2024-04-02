@@ -30,8 +30,8 @@ export class TimelineComponent implements OnInit {
 
 
       })
-    }
 
+    }
 
 
 
@@ -56,6 +56,7 @@ onPageChange(pageNumber: number) {
     this.alertService.getAlerts(page).subscribe({
       next: (response:any) =>{
         this.alerts=response.alerts;
+        this.filteredAlerts=this.alerts
         this.currentPage=response.current_page;
         this.totalPages=response.total_pages;
         // this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
@@ -89,6 +90,19 @@ onPageChange(pageNumber: number) {
   }
 
 
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredAlerts = this.alerts;
+      return;
+    }
+
+    this.filteredAlerts = this.alerts.filter(
+      event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
+      event?.content.toLowerCase().includes(text.toLowerCase())
+    );
+  }
+
+
 }
 
 
@@ -96,30 +110,6 @@ onPageChange(pageNumber: number) {
 
 
 
-// filterResults(text: string) {
-  //   if (!text) {
-    //     this.filteredAlerts = this.alerts;
-//     return;
-//   }
-
-//   this.filteredAlerts = this.alerts.filter(
-//     alert => alert?.title.toLowerCase().includes(text.toLowerCase()) ||
-//     alert?.content.toLowerCase().includes(text.toLowerCase())
-//   );
-// }
-
-
-
-// this.alertService.getTimeLineAlerts().subscribe({
-//   next: (alerts:Alert[])=>{
-//     this.alerts=alerts
-//     this.filteredAlerts = alerts;
-//   },
-//   error: (error:any) =>{
-//     console.error("Error fetching timeline posts", error)
-//   }
-// })
-// }
 
 
 

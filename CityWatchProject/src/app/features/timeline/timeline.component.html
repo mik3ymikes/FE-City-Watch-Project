@@ -1,9 +1,8 @@
 <div class=" con container-fluid d-flex align-items-center justify-content-around ">
   <h1 class="mt-4 mb-5 ">See Alerts Now 🚓</h1>
   <div class="d-flex">
-    <input class="" placeholder="Search for an Alert" type="text" #filter >
-    <button  class="btn btn-dark">🔎</button>
-    <!-- (click)="filterResults(filter.value)" -->
+    <input class="" placeholder="Search for an Event" type="text" #filter >
+    <button (click)="filterResults(filter.value)" class="btn btn-dark">🔎</button>
   </div>
 </div>
 
@@ -21,8 +20,8 @@
 
     <div class="container main-con">
       <div class="row justify-content-center" >
-
-      @for(alert of alerts; track alert.id){
+        <!-- @for(alert of alerts; track alert.id){ -->
+      @for(alert of filteredAlerts; track alert.id){
         <!-- @for (events of filteredEvents; track alert.title) {} -->
         <!-- @for (filteredEvents of events; track filteredEvents.title) {} -->
         <div class="col-auto">
