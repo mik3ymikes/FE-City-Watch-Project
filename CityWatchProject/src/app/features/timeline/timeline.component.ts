@@ -3,11 +3,12 @@ import { Alert } from '../../shared/models/alert';
 import { AlertComponent } from '../../shared/components/alert/alert.component';
 import { AlertService } from '../../core/services/alert.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [AlertComponent],
+  imports: [AlertComponent, FormsModule],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.css'
 })
@@ -18,6 +19,7 @@ export class TimelineComponent implements OnInit {
   currentPage: number = 1;
   totalPages:number=0;
   itemsPerPage: number = 20;
+  searchText: string = '';
 
   constructor(private alertService:AlertService,
     private router:Router, private route:ActivatedRoute){}
@@ -105,7 +107,8 @@ onPageChange(pageNumber: number) {
 
     back(){
      this.filteredAlerts=this.alerts
-   
+     this.searchText=''
+
     }
 
 
