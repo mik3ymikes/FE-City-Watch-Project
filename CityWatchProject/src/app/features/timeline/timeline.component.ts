@@ -103,6 +103,12 @@ onPageChange(pageNumber: number) {
   }
 
 
+  back(){
+ 
+  }
+
+
+
 }
 
 

@@ -2,7 +2,12 @@
   <h1 class="mt-4 mb-5 ">See Alerts Now 🚓</h1>
   <div class="d-flex">
     <input class="" placeholder="Search for an Event" type="text" #filter >
-    <button (click)="filterResults(filter.value)" class="btn btn-dark">🔎</button>
+    <!-- @if(){ -->
+      <button (click)="filterResults(filter.value)" class="btn btn-dark">🔎</button>
+      <button (click)="back()" class="btn btn-dark">exit</button>
+    <!-- } @else {
+       <button (click)="filterResults(filter.value)" class="btn btn-dark"></button>
+    } -->
   </div>
 </div>
 
@@ -22,8 +27,6 @@
       <div class="row justify-content-center" >
         <!-- @for(alert of alerts; track alert.id){ -->
       @for(alert of filteredAlerts; track alert.id){
-        <!-- @for (events of filteredEvents; track alert.title) {} -->
-        <!-- @for (filteredEvents of events; track filteredEvents.title) {} -->
         <div class="col-auto">
           <app-alert [alert]="alert"/>
           </div>
