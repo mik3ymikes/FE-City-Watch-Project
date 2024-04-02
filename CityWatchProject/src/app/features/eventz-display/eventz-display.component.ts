@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
-// import { PaginationComponent } from '../../pagination/pagination.component';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { UserService } from '../../core/services/user.service';
-// import { User } from '../../shared/models/user';
 
 
 
@@ -21,14 +18,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
-// eventz: Event[]=[]
 // currentUser: User | null = new User ({})
 // hasJoined: boolean = false
-// totalPagesArray: number[] = [];
 filteredEvents: Event[] = [];
 currentPage: number = 1;
 totalPages:number=0;
 itemsPerPage: number = 21;
+
 
 
 constructor(private eventService:EventService,
@@ -38,7 +34,6 @@ constructor(private eventService:EventService,
   {}
 
   ngOnInit(): void {
-    // this.eventz=this.eventService.getEventz()
   this.route.queryParams.subscribe(params=>{
       const page=params['page'] ? Number(params['page']) :1
       this.loadEvents(page)
