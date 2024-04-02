@@ -99,13 +99,14 @@ onPageChange(pageNumber: number) {
     this.filteredAlerts = this.alerts.filter(
       event => event?.title.toLowerCase().includes(text.toLowerCase()) ||
       event?.content.toLowerCase().includes(text.toLowerCase())
-    );
-  }
+      );
+    }
 
 
-  back(){
-   this.filteredAlerts=this.alerts
-  }
+    back(){
+     this.filteredAlerts=this.alerts
+   
+    }
 
 
 
