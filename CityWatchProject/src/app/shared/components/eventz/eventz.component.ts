@@ -79,7 +79,7 @@ export class EventzComponent implements OnInit {
   toggleJoinEvent() {
 
 
-    // this.hasJoined = this.toggleAttending; // Set hasJoined based on toggleAttending value
+   
     const eventId = this.event.id; // Get the event ID
 
     const eventJoin$ = this.hasJoined ? this.eventService.joinEvent(eventId) // Join the event if hasJoined is true
