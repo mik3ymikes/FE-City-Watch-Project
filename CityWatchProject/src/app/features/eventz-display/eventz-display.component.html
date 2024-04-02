@@ -17,9 +17,8 @@
 <div class="container main-con">
   <div class="row justify-content-center" >
 
-  @for(event of events; track event.id){
-    <!-- @for (events of filteredEvents; track event.title) {} -->
-    <!-- @for (filteredEvents of events; track filteredEvents.title) {} -->
+  <!-- @for(event of events; track event.id){ orginal works -->
+  @for(event of filteredEvents; track event.id){
     <div class="col-auto">
         <app-eventz [event]="event"/>
       </div>

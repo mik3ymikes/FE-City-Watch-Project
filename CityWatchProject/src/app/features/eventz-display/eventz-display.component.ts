@@ -56,8 +56,6 @@ addEvent(){
 
 
 
-
-
 // get paginatedItems() {
 //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
 //   const endIndex = startIndex + this.itemsPerPage;
@@ -92,6 +90,8 @@ onPageChange(pageNumber: number) {
     this.eventService.getEvents(page).subscribe({
       next: (response:any) =>{
         this.events=response.events;
+        this.filteredEvents=this.events
+        console.log(this.filteredEvents)
         this.currentPage=response.current_page;
         this.totalPages=response.total_pages;
         // this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
