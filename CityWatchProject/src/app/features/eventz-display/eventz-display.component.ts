@@ -3,6 +3,7 @@ import { Event } from '../../shared/models/event';
 import { EventzComponent } from '../../shared/components/eventz/eventz.component';
 import { EventService } from '../../core/services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-eventz-display',
   standalone: true,
-  imports: [EventzComponent],
+  imports: [EventzComponent, FormsModule],
   templateUrl: './eventz-display.component.html',
   styleUrl: './eventz-display.component.css'
 })
@@ -24,6 +25,7 @@ filteredEvents: Event[] = [];
 currentPage: number = 1;
 totalPages:number=0;
 itemsPerPage: number = 21;
+searchText: string = '';
 
 
 
@@ -112,6 +114,13 @@ onPageChange(pageNumber: number) {
       })
     }
   }
+
+
+  back(){
+    this.filteredEvents=this.events
+    this.searchText=''
+
+   }
 }
 
 
