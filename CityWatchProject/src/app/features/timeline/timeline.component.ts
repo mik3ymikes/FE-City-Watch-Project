@@ -104,7 +104,7 @@ onPageChange(pageNumber: number) {
 
 
   back(){
- 
+   this.filteredAlerts=this.alerts
   }
 
 
