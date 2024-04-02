@@ -21,6 +21,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class EventzDisplayComponent implements OnInit {
 events: Event[]=[]
+// eventz: Event[]=[]
 // currentUser: User | null = new User ({})
 // hasJoined: boolean = false
 // totalPagesArray: number[] = [];
@@ -36,9 +37,8 @@ constructor(private eventService:EventService,
   )
   {}
 
-ngOnInit(): void {
-
-
+  ngOnInit(): void {
+    // this.eventz=this.eventService.getEventz()
   this.route.queryParams.subscribe(params=>{
       const page=params['page'] ? Number(params['page']) :1
       this.loadEvents(page)

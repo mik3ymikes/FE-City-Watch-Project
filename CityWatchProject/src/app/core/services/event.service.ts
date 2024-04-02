@@ -12,7 +12,9 @@ export class EventService {
   constructor(private http:HttpClient) { }
 
 
-
+getEventz(): Observable <Event[]>{
+  return this.http.get<Event[]>(`${environment.apiUrl}/events`)
+}
 
   getEvents(page:number): Observable <Event[]>{
     return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
