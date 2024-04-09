@@ -128,7 +128,7 @@ export class CommentsAlertComponent implements OnInit {
 
     deleteComment(commentId:string | number){
       console.log(commentId)
-      console.log("hey")
+     
       this.alertService.deleteComment(this.alert.id, commentId).subscribe({
 
         next: () => {
