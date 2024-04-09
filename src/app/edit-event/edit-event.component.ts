@@ -61,7 +61,7 @@ export class EditEventComponent implements OnInit {
   })
 
   onEdit(){
-    console.log('FormGroup:', this.addEventForm.value);
+    // console.log('FormGroup:', this.addEventForm.value);
     if (this.addEventForm.valid) {
 
       const formData = new FormData();
@@ -71,11 +71,11 @@ export class EditEventComponent implements OnInit {
       formData.append('title', this.addEventForm.get('title')!.value!)
 
       if (!this.selectedFile) {
-        console.log('Selected file is not defined');
+        // console.log('Selected file is not defined');
         // Perform any additional actions or proceed accordingly
       } else {
         formData.append('cover_image', this.selectedFile, this.selectedFile.name);
-        console.log(this.selectedFile);
+        // console.log(this.selectedFile);
         // Proceed with further actions when selectedFile is defined
       }
 
@@ -86,7 +86,7 @@ export class EditEventComponent implements OnInit {
       //add update event here%$%$%$ figure out why patch doesnt work
       this.eventService.updateEvent(this.event.id ,formData).subscribe({
         next: (event:Event)=>{
-        console.log('FormData:', formData)
+        // console.log('FormData:', formData)
         // next: ()=>{
         console.log('event created', event)
         this.router.navigate(['/events'])

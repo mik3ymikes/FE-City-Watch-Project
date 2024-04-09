@@ -21,7 +21,7 @@ constructor(private route:ActivatedRoute, private eventService:EventService){}
       this.eventService.getEvent(params['id']).subscribe({
         next: (event:Event)=>{
             this.event=event
-            console.log(this.event)
+            // console.log(this.event)
 
         },
         error:(error)=>{

@@ -75,7 +75,7 @@ export class CommentsAlertComponent implements OnInit {
         this.isLoading = true;
         this.alertService.addComment(this.alert.id, commentData).subscribe(
           (response) => {
-            console.log('Comment added successfully:', response);
+            // console.log('Comment added successfully:', response);
             this.addCommentForm.reset();
             this.isHidden=true;
             this.isLoading = false;
@@ -127,12 +127,12 @@ export class CommentsAlertComponent implements OnInit {
 
 
     deleteComment(commentId:string | number){
-      console.log(commentId)
-     
+
+
       this.alertService.deleteComment(this.alert.id, commentId).subscribe({
 
         next: () => {
-          console.log('Comment deleted successfully');
+         
           const index = this.comment.findIndex(comment => comment.id === commentId);
           if (index !== -1) {
             this.comment.splice(index, 1);

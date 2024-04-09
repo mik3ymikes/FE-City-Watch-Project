@@ -32,7 +32,7 @@ export class AddAlertComponent {
   })
 
   onSubmit(){
-    console.log('FormGroup:', this.addEventForm.value);
+    // console.log('FormGroup:', this.addEventForm.value);
     // if (this.addEventForm.valid && this.selectedFile) {
 
       const formData:any = new FormData();
@@ -46,12 +46,8 @@ export class AddAlertComponent {
 
       // const formValue=this.addEventForm.value
       this.isLoading=true
-      // console.log(formValue)
       this.alertService.createAlert(formData).subscribe({
         next: (event:Alert)=>{
-        console.log('FormData:', formData)
-        // next: ()=>{
-        console.log('alert created', alert)
         this.router.navigate(['/alerts'])
       },
       error: (error:any) =>{
@@ -61,16 +57,7 @@ export class AddAlertComponent {
         this.isLoading=false
       }
      })
-    // }
 
-    // this.eventService.createEvent(formValue).subscribe({
-    //   next: () =>{
-    //      this.router.navigate(['/events'])
-    //   },
-    //   error: (error)=>{
-    //     console.log(error)
-    //   }
-    // })
 
    }
 
@@ -81,12 +68,6 @@ close(){
 
 
 
-// onFileSelected(alert: any) {
-//   if (alert.target.files && alert.target.files[0]) {
-//     this.selectedFile = alert.target.files[0];
-
-//   }
-// }
 
 
 

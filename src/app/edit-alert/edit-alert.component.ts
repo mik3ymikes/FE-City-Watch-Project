@@ -60,7 +60,7 @@ export class EditAlertComponent implements OnInit {
 
 
   onEdit(){
-    console.log('FormGroup:', this.addAlertForm.value);
+    // console.log('FormGroup:', this.addAlertForm.value);
     if (this.addAlertForm.valid) {
 
       const formData = new FormData();
@@ -95,7 +95,7 @@ export class EditAlertComponent implements OnInit {
 
 
    deleteAlert(){
-     console.log(this.alert.id)
+    //  console.log(this.alert.id)
     this.alertService.deleteAlert(this.alert.id).subscribe({
 
 

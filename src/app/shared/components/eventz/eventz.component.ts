@@ -92,7 +92,7 @@ export class EventzComponent implements OnInit {
         // Toggle hasJoined after the API call is successful
         // this.event.has_joined=
         this.hasJoined = !this.hasJoined;
-        console.log(this.hasJoined)
+        // console.log(this.hasJoined)
 
         // this.event.has_joined=!this.event.has_joined
         // console.log(this.event.has_joined)

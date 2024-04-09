@@ -116,12 +116,11 @@ export class CommentsEventComponent {
 
 
     deleteComment(commentId:string | number){
-      console.log(commentId)
-      console.log("hey")
+
       this.eventService.deleteComment(this.event.id, commentId).subscribe({
 
         next: () => {
-          console.log('Comment deleted successfully');
+         
           const index = this.comment.findIndex(comment => comment.id === commentId);
           if (index !== -1) {
             this.comment.splice(index, 1);
