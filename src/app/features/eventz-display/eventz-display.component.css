@@ -19,3 +19,7 @@ button:disabled{
   /* background-color: #ff0303; */
   cursor: not-allowed;
 }
+
+.conz{
+  min-height: 100%;
+}
