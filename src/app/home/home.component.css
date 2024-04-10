@@ -56,7 +56,7 @@
 
 
 .closing{
- 
+
   flex: 1;
 
 
@@ -107,4 +107,16 @@
 a{
   text-decoration: none;
   color: black;
+}
+
+
+
+@media (max-width: 767px) {
+
+  .square {
+    width: 25%;
+    height: 15rem;
+
+  }
+
 }
