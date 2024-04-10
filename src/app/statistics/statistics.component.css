@@ -35,3 +35,19 @@
 
 }
 
+
+@media (max-width: 767px) {
+  .d-flex {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .small {
+    width: 100%; /* Full width */
+  }
+
+  .photo2{
+    width: 100%;
+  }
+
+}
+
