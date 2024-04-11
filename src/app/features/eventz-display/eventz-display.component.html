@@ -32,14 +32,14 @@
       </div>
     }
 </div>
+
+
+
+<div class="pagination-controls d-flex gap-2 ">
+  <button class="btn btn-dark" (click)="previousPage()" [disabled]="currentPage===1">Previous</button>
+  <button class="btn btn-dark" (click)="nextPage()" [disabled]="currentPage===totalPages || totalPages === 0">Next</button>
 </div>
-
-
-
-    <div class="pagination-controls d-flex gap-2 ">
-    <button class="btn btn-dark" (click)="previousPage()" [disabled]="currentPage===1">Previous</button>
-    <button class="btn btn-dark" (click)="nextPage()" [disabled]="currentPage===totalPages || totalPages === 0">Next</button>
-  </div>
+</div>
 
 
 
