@@ -43,7 +43,7 @@
 
            <div>
             <label for="cover_image">Cover Image</label>
-            <input type="file" (change)="onFileSelected($event)" name="cover-image" id="cover-image"/>
+            <input class="cover" type="file" disabled type="file" (change)="onFileSelected($event)" name="cover-image" id="cover-image"/>
           </div>
             @if (isError) {
              <p class="error">Date ranges cannot be in the past</p>

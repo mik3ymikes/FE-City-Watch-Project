@@ -144,3 +144,9 @@ input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.n
 .deleteEvent{
   background-color: red;
 }
+
+
+.cover{
+  cursor: not-allowed;
+}
+
